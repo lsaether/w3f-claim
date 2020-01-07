@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css?family=Muli:300,400,600&display=swap");
+
+$font-body: "Muli", sans-serif !important;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	color: $black;
+	font-weight: 400;
+}
+
+.text-dark {
+	color: $black !important;
+}
+
+h1.text-dark,
+h2.text-dark,
+h3.text-dark,
+h4.text-dark,
+h5.text-dark,
+h6.text-dark,
+.h1.text-dark,
+.h2.text-dark,
+.h3.text-dark,
+.h4.text-dark,
+.h5.text-dark,
+.h6.text-dark {
+	color: $black !important;
+}
+
+a {
+	color: $primary;
+}
+
+a:hover {
+	color: #cd0061;
+}
+
+.text-primary {
+	color: $primary !important;
+}
+
+.text-white {
+	color: $white !important;
+}
+
+b,
+strong {
+	font-weight: 600 !important;
+}

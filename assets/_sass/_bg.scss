@@ -1,0 +1,99 @@
+.bg-primary {
+  background: linear-gradient(
+    to right,
+    $primary-lighter,
+    $primary,
+    $primary-darker
+  );
+
+  &--solid {
+    background: $primary !important;
+  }
+
+  a {
+    color: $gray;
+  }
+
+  a:hover {
+    color: $white;
+  }
+}
+
+.bg-secondary {
+  background: $secondary-darker !important;
+}
+
+.bg-dark {
+  background: $secondary-darker !important;
+}
+
+.bg-gray {
+  background: $gray !important;
+}
+
+a.bg-primary:hover,
+a.bg-primary:focus,
+button.bg-primary:hover,
+button.bg-primary:focus {
+  background-color: #cd0061 !important;
+}
+
+.bg-dark .text-white {
+  color: #fff !important;
+}
+
+.bg-dark .footer-legal .text-white {
+  color: #b5aeae !important;
+}
+
+.bg-white p,
+.bg-white p.lead {
+  color: $black;
+}
+
+.bg-dark-alt {
+  background: radial-gradient(circle, #545454 0, #424242);
+  background-image: radial-gradient(
+    circle,
+    rgb(84, 84, 84) 0px,
+    rgb(66, 66, 66)
+  );
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat-x: initial;
+  background-repeat-y: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: initial;
+}
+
+.bg-dark hr {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.075);
+}
+
+.bg-dots {
+  background: url("../img/bg-dots.png") repeat;
+}
+
+.bg-image-align-top {
+  object-position: 0 0;
+}
+
+.bg-dark .form-control {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: none;
+}
+
+.bg-dark .form-control::placeholder {
+  color: #ffffff;
+}
+
+.bg-primary-alt {
+  background-color: #fffaff !important;
+}

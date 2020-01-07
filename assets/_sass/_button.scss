@@ -1,0 +1,87 @@
+.btn {
+	font-weight: 600;
+	border-radius: 1.5rem;
+	font-size: 16px;
+	padding: 8px 16px;
+
+	&:before {
+		width: 42px;
+		left: -42px;
+		border-radius: 1.5rem;
+	}
+}
+
+.btn-lg,
+.btn-group-lg > .btn {
+	border-radius: 2rem;
+	padding: 16px 20px;
+
+	&:before {
+		width: 58px;
+		left: -58px;
+		border-radius: 2rem;
+	}
+}
+
+.btn-sm,
+.btn-group-sm > .btn {
+	border-radius: 1.5rem;
+	font-size: 16px;
+	padding: 8px 16px;
+
+	&:before {
+		width: 42px;
+		left: -42px;
+		border-radius: 1.5rem;
+	}
+}
+
+.btn-primary {
+	color: $primary;
+	background-color: transparent;
+	border-color: $primary;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	border: solid 1px $primary;
+	transition: all 0.2s ease, border 1ms ease;
+	will-change: transform;
+	transform: scale(0.999);
+
+	&:before {
+		content: "";
+		height: 100%;
+		position: absolute;
+		top: 0;
+		background: $primary;
+		transition: all 0.2s ease, background-color 0.1s linear;
+		will-change: transform;
+		color: transparent;
+		z-index: -1;
+		border: solid 1px $primary;
+	}
+
+	&:hover,
+	&:focus {
+		background: none;
+		color: white;
+		will-change: transform;
+		transform: scale(1.1);
+		border: solid 1px transparent;
+	}
+
+	&[type="submit"]:hover,
+	&[type="submit"]:focus {
+		background: $primary;
+	}
+
+	&:hover:before,
+	&:focus:before {
+		left: 0;
+		width: 100%;
+	}
+}
+
+.btn-white {
+	color: white !important;
+}

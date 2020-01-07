@@ -1,0 +1,51 @@
+.navbar {
+	border: none;
+	padding-top: 2rem;
+	margin-bottom: 0;
+	border-radius: 0;
+}
+
+.navbar-brand {
+	height: auto;
+	padding-top: 0;
+	padding-bottom: 0;
+
+	footer & {
+		display: inline-block;
+		padding-top: 0.3125rem;
+		padding-bottom: 0.3125rem;
+		padding-left: 0;
+		padding-right: 0;
+		margin-right: 1.5rem;
+	}
+}
+
+.btn-bg-dark {
+	background: $secondary;
+	border-color: transparent;
+	color: white;
+	transition: all 0.2s ease, border 1ms ease, background-color 1ms ease;
+
+	&:before {
+		display: none;
+	}
+
+	&:hover,
+	&:focus,
+	&.active {
+		background: $primary !important;
+		color: white;
+		will-change: transform;
+		transform: scale(1.05);
+		border: solid 1px transparent !important;
+		box-shadow: none !important;
+		outline: 0 !important;
+	}
+}
+
+p a {
+	overflow-wrap: break-word;
+	word-break: break-word;
+	hyphens: auto;
+	color: $primary !important;
+}
