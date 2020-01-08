@@ -5,9 +5,8 @@
 /* eslint-disable no-invalid-this */
 
 import $ from 'jquery';
-import jQuery from 'jquery';
+window.jQuery = $;
 window.$ = $;
-window.jQuery = jQuery;
 
 import { tns } from 'tiny-slider/src/tiny-slider';
 

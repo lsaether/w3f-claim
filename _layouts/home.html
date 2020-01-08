@@ -2,21 +2,76 @@
 layout: default
 ---
 
-<section class="p-0 bg-white">
-	<div class="container pt-5 pb-5">
+<section class="bg-primary">
+	<div class="container height-30">
 		<div class="row text-center justify-content-center">
 			<div class="col-md-12 col-lg-12 pt-2 pb-4">
-				<h1 class="display-4 text-dark">DOT Claim</h1>
+				<h1 class="display-4 text-white">Welcome to DOT Claims</h1>
 			</div>
 		</div>
 	</div>
 </section>
 
-<section class="bg-white pt-0">
+<section class="bg-white">
+	<div class="container">
+		<div class="row justify-content-start mb-5">
+			<div class="col-12 col-md-8">
+				<h2 class="h1">This DApp will walk you through the&nbsp;process of&nbsp;claiming DOT’s. In order to do so, you
+					need to have an allocation of&nbsp;DOTs.</h2>
+			</div>
+		</div>
+		<div class="row justify-content-start py-4">
+			<div class="col-12 col-md-6">
+				<div class="card border border-radius-2 min-100">
+					<div class="card-body p-3">
+						<h6>Create a Wallet with <br>DOT account</h6>
+						<div class="mt-5 pt-2">
+							<button class="btn btn-bg-light mr-1 mb-2 shadow">Parity Signer</button>
+							<button class="btn btn-bg-light mr-1 mb-2 shadow ">Polkadot Browser Plugin</button>
+							<button class="btn btn-bg-light mr-1 mb-2 shadow ">Subkey</button>
+							<button class="btn btn-bg-light mr-1 mb-2 shadow ">polkadot.js</button>
+							<button class="btn btn-bg-light mr-1 mb-2 shadow ">Coinbase</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-4">
+				<div class="card border border-radius-2 min-100">
+					<div class="card-body p-3">
+						<h6 class="mb-5">DOT’s Claim</h6>
+						<div class="mt-5 pt-2">
+							<button class="btn btn-bg-light mr-1 mb-2 shadow">MyCrypto</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-2">
+				<div class="card border border-radius-2 min-100">
+					<div class="card-body p-3">
+						<h6 class="mb-5">Verify your <br>Claim</h6>
+						<img src="{{site.baseurl}}/assets/images/check_circle-24px.svg">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 spacer-y-2 text-center">
+				<a href="#" data-smooth-scroll="" class="btn btn-lg btn-primary mt-3">Start</a>
+			</div>
+			<div class="col-12 col-md-4 spacer-y-1">
+				Using other processes to claim DOT’s
+				is not recommended.
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="bg-white">
 	<div class="container">
 		<div class="row justify-content-start">
 			<div class="col-12 mb-4">
-				<h2>What Will Be Generated</h2>
+				<h2 class="display-4">Create a Wallet</h2>
+				<h3 class="h2">What Will Be Generated</h3>
 			</div>
 			<div class="col-12 col-md-6 col-lg-4">
 				<p>A key concept to understand is that you are actually generating two
@@ -53,6 +108,7 @@ layout: default
 		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 jsSliderGoTo">Polkadot Browser Plugin</button>
 		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 jsSliderGoTo">Subkey</button>
 		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 jsSliderGoTo">polkadot.js</button>
+		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 jsSliderGoTo">Coinbase</button>
 	</div>
 	<div class="pb-2">
 		<div class="slider text-white pt-5 pb-0">
@@ -76,15 +132,69 @@ layout: default
 					{%- include slider_polkadot_js.html -%}
 				</div>
 			</div>
+			<div>
+				<div class="container">
+					<h2 class="text-white">Coinbase</h2>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
 
-<section class="p-0 bg-white">
-	<div class="container pt-5 pb-5">
+<section class="bg-white">
+	<div class="container spacer-y-2">
+		<div class="row justify-content-start">
+			<div class="col-12 mb-4">
+				<h2 class="display-4">DOT’s Claim</h2>
+			</div>
+			<div class="col-12 col-md-6 col-lg-4">
+				<p>If you participated in the DOT sale and have received your DOT
+					indicator tokens, you can claim the corresponding amount of
+					KSM.</p>
+				<p>Make sure to use your original Ethereum key during this
+					process.</p>
+			</div>
+			<div class="col-12 col-md-6 col-lg-4 mb-4">
+				<p>If you don’t have a Polkadot address, you will
+					need to generate a Polkadot address.</p>
+				<a href="#">Go to Create a Wallet</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="bg-primary">
+	<div class="container height-40">
 		<div class="row text-center justify-content-center">
 			<div class="col-md-12 col-lg-12 pt-2 pb-4">
-				<h1 class="display-4 text-dark">Another section</h1>
+				<h2 class="display-4 text-white">Verify your Claim</h2>
+				<p class="mb-4">Paste an Ethereum or Polkadot public key <br>to check the associated information</p>
+				<input class="h3 border-0 border-radius-2 text-dark p-2">
+				<p>
+					Polkadot address: None<br>
+					Public key: None<br>
+					Index: None<br>
+					Balance: 0 DOT
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="bg-white">
+	<div class="container spacer-y-2">
+		<div class="row justify-content-between">
+			<div class="col-12 mb-4">
+				<h2 class="h3">Third Party Claims Processes</h2>
+			</div>
+			<div class="col-12 col-md-6">
+				<p>We do not recommend using a third-party app or process to
+					perform your claim or acquire KSM</p>
+				<p>Claiming using a third-party process can lead to the loss of
+					your allocation, therefore we cannot recommend using any
+					third party apps to do so. Manually specifying your transaction
+					data, as specified in our claims process, is the only way to be
+					certain you will receive your allocation.</p>
 			</div>
 		</div>
 	</div>
