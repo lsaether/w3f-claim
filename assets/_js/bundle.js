@@ -10,6 +10,7 @@ window.$ = $;
 
 // import 'bootstrap-sass';
 import { tns } from 'tiny-slider/src/tiny-slider';
+// import SmoothScroll from 'smooth-scroll/dist/smooth-scroll.polyfills';
 
 let sliderInner = tns({
 	container: '#nested_inner',
@@ -66,3 +67,7 @@ const slider = tns({
 		});
 	});
 })(jQuery);
+
+// let scroll = new SmoothScroll('a[href*="#"]', {
+// 	speed: 300
+// });

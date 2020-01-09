@@ -54,13 +54,13 @@ layout: default
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-12 spacer-y-2 text-center">
-				<a href="#" data-smooth-scroll="" class="btn btn-lg btn-primary mt-3">Start</a>
-			</div>
-			<div class="col-12 col-md-4 spacer-y-1">
+		<div class="row justify-content-center">
+			<div class="col-12 col-md-4 spacer-y-1 text-center pt-4">
 				Using other processes to claim DOT’s
 				is not recommended.
+			</div>
+			<div class="col-12 text-center">
+				<a href="#" data-smooth-scroll="" class="btn btn-lg btn-primary mt-3">Start</a>
 			</div>
 		</div>
 	</div>
@@ -68,37 +68,7 @@ layout: default
 
 <section class="bg-white">
 	<div class="container">
-		<div class="row justify-content-start">
-			<div class="col-12 mb-4">
-				<h2 class="display-4">Create a Wallet</h2>
-				<h3 class="h2">What Will Be Generated</h3>
-			</div>
-			<div class="col-12 col-md-6 col-lg-4">
-				<p>A key concept to understand is that you are actually generating two
-					<strong class="text-primary">“keys”</strong>
-					(strings of characters),
-					<strong class="text-primary">one public</strong> (the address) and <strong class="text-primary">one
-						private</strong> (your seed). A useful analogy is
-					a mailroom at the post office. Anybody with your address can send you mail, or put mail in your mailbox, but
-					you need your private key to open your mailbox and move your mail. Similarly, anybody with your Polkadot
-					address can send you DOTs, but to do anything with those DOTs in your account, you will need to have your
-					seed (or an application which have already entered it).</p>
-				</p>
-				<p>Your Polkadot address can be shared publicly, but you should never reveal your seed. If somebody has your
-					address, they could send you DOTs or associate your real-world identity with on-chain actions. However, this
-					information would not allow them to harm your account or do anything in your name.</p>
-			</div>
-			<div class="col-12 col-md-6 col-lg-4 mb-4">
-				<p>If somebody has access to your seed, they have complete control over your account! This means that they can
-					do anything that you could do, including transfer all of your DOTs to a different account. Neither the Web3
-					Foundation nor anyone else will be able to recover your DOTs in such a situation.</p>
-
-				<p>This is why it is recommended that you do not store your seed anywhere on a digital device which can be
-					connected to a network. It should be written down on paper and only entered when necessary. It should never be
-					shared with anybody - again, if anyone has access to your seed, they will have complete control over your
-					account.</p>
-			</div>
-		</div>
+		{%- include wallet.html -%}
 	</div>
 </section>
 
