@@ -21,6 +21,16 @@
 	}
 }
 
+.btn-primary {
+	&:focus,
+	&:active {
+		outline: 0 !important;
+		background: $primary !important;
+		border-color: $primary !important;
+		box-shadow: none !important;
+	}
+}
+
 .btn-bg-dark {
 	background: $secondary;
 	border-color: transparent;
