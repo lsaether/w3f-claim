@@ -111,14 +111,14 @@ const balanceCheck = async (value) => {
   }
 
   return {
-      amended,
-      balData: {
-          bal,
-          index: index || null,
-          pubKey: pubKey || null,
-          vested: vestingAmt,
-      },
-      noBalance: false,
+    amended,
+    balData: {
+      bal,
+      index: index || null,
+      pubKey: pubKey || null,
+      vested: vestingAmt,
+    },
+    noBalance: false,
   }
 }
 
