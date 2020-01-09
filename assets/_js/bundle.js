@@ -8,6 +8,7 @@ import $ from 'jquery';
 window.jQuery = $;
 window.$ = $;
 
+// import 'bootstrap-sass';
 import { tns } from 'tiny-slider/src/tiny-slider';
 
 let sliderInner = tns({

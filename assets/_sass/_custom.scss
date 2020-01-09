@@ -51,6 +51,13 @@ p a {
 	color: $primary !important;
 }
 
+a {
+	&:focus {
+		color: $primary;
+		text-decoration: none;
+	}
+}
+
 .min-100 {
 	min-height: 100%;
 }

@@ -28,3 +28,8 @@ a.back-to-top.sticky-viewport-bottom.position-fixed {
 		}
 	}
 }
+
+.row:before,
+.row:after {
+	display: inline-block;
+}
