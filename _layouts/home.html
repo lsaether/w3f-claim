@@ -163,18 +163,21 @@ layout: default
 	</div>
 </section>
 
+<script src="assets/js/infobox.min.js"></script>
+
 <section class="bg-primary">
 	<div class="container height-40">
-		<div class="row text-center justify-content-center">
+		<div class="row text-center justify-c)ontent-center">
 			<div class="col-md-12 col-lg-12 pt-2 pb-4">
 				<h2 class="display-4 text-white">Verify your Claim</h2>
 				<p class="mb-4">Paste an Ethereum or Polkadot public key <br>to check the associated information</p>
-				<input class="h3 border-0 border-radius-2 text-dark p-2">
+				<input class="h3 border-0 border-radius-2 text-dark p-2" onchange="globalThis.check(); "onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" id="address-input">
 				<p>
-					Polkadot address: None<br>
-					Public key: None<br>
-					Index: None<br>
-					Balance: 0 DOT
+					Polkadot address: <span id="pd-address">None</span><br>
+					Public key: <span id="pubkey">None</span><br>
+					Index: <span id="index">0</span><br>
+					Balance: <span id="balance">0</span> DOT<br>
+					Vesting: <span id='vesting'>None</span>
 				</p>
 			</div>
 		</div>
