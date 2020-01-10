@@ -29,6 +29,22 @@ let sliderInner = tns({
 });
 
 let sliderInner2 = tns({
+	container: '#nested_inner_polkadot_js_plugin',
+	mode: 'gallery',
+	items: 1,
+	nested: 'inner',
+	slideBy: 'page',
+	speed: 400,
+	controls: true,
+	nav: true,
+	navPosition: 'bottom',
+	controlsPosition: 'bottom',
+	autoplay: false,
+	loop: false,
+	lazyload: true
+});
+
+let sliderInner3 = tns({
 	container: '#nested_inner_2',
 	mode: 'gallery',
 	items: 1,

@@ -11,6 +11,7 @@
 	display: flex;
 	justify-content: space-between;
 	outline: 0 !important;
+	padding-bottom: 0.2rem;
 
 	& > button {
 		border-radius: 50%;
@@ -45,7 +46,7 @@
 	display: inline-block;
 	transform: translate(-50%, -50%);
 	left: 50%;
-	bottom: 0.35rem;
+	bottom: 0.65rem;
 
 	button {
 		border: none;
@@ -59,29 +60,121 @@
 }
 
 .slider-img-wrapper {
-	padding: 10px 0 0 4rem !important;
+	// padding: 10px 0 0 4rem !important;
 	max-width: 100%;
+	padding-top: 10px;
+
+	&.col-12.col-md-4 {
+		// padding: 10px 3rem 0 3rem !important;
+	}
 }
 
 .slider-img {
 	position: relative;
 
+	img {
+		box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.5);
+	}
+}
+
+.dot {
 	&:after {
 		content: "";
 		position: absolute;
 		transform: translate(-50%, -50%);
 		width: 1rem;
 		height: 1rem;
-		top: 27.85%;
-		left: 53.9%;
 		border-radius: 50%;
 		background: $primary;
 		will-change: transform;
 		animation: pulsing-dot 1.5s ease-in-out infinite;
 	}
 
+	&#s1_2:after {
+		top: 27.85%;
+		left: 53.9%;
+	}
+
+	&#s1_3:after {
+		top: 27.2%;
+		left: 24.5%;
+	}
+
+	&#s1_5_1:after {
+		bottom: 7%;
+		right: 15.5%;
+	}
+
+	&#s1_5_2:after {
+		bottom: 9%;
+		left: -0.5%;
+	}
+
+	&#s1_6_1:after {
+		top: 21%;
+		left: -0.5%;
+	}
+
+	&#s1_6_2:after {
+		top: 22.3%;
+		left: 66.5%;
+	}
+
+	&#s1_6_3:after {
+		top: 38.5%;
+		left: -0.5%;
+	}
+
+	&#s1_6_4:after {
+		top: 63.4%;
+		left: -0.5%;
+	}
+
+	&#s1_6_5:after {
+		top: 49.2%;
+		left: -0.5%;
+	}
+
+	&#s1_6_6:after {
+		top: 36.1%;
+		left: -0.5%;
+	}
+
+	&#s1_6_7:after {
+		top: 59.5%;
+		left: -0.5%;
+	}
+
+	&#s1_7:after {
+		top: 42.4%;
+		left: -0.5%;
+	}
+
+	&#s1_8:after {
+		top: 42.4%;
+		left: -0.5%;
+	}
+
+	&#s1_9_1:after {
+		top: 47.5%;
+		left: -0.5%;
+	}
+
+	&#s1_9_2:after {
+		top: 50%;
+		left: -0.5%;
+	}
+}
+
+#s1_4 {
 	img {
-		box-shadow: 0 0 1rem 0.5rem black;
+		border-radius: 24%;
+	}
+}
+
+#s1_9_2 {
+	img {
+		border-radius: 50%;
 	}
 }
 
