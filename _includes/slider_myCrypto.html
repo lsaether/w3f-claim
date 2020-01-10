@@ -1,4 +1,4 @@
-<div id="nested_innerA_2">
+<div id="nested_innerA">
 	<div>
 		<div class="row mb-5">
 			<div class="col-12 col-md-7">
@@ -23,11 +23,12 @@
 						<h2 class="text-white">Install MyCrypto</h2>
 					</div>
 					<div class="col-12 col-md-6">
-                        <p>NOTICE: It is much more secure to download and use the MyCrypto app locally. Please make sure to download the latest version for your operating system. You can always find the most up-to-date releases of the desktop app on their releases page.</p>
-					</div>
-					<div class="col-12 col-md-6">
                         <p>
-                            Once you've downloaded the MyCrypto app and run it locally (run it on an airgapped computer for maximum security), head over to the claiming DApp and select Claim on Ethereum (before genesis) from the dropdown. The DApp will display the address and ABI to the Claims contract and an input asking for you to enter your Polkadot address. When you paste your Polkadot address in the input it will display a hex-encoded public key.
+                            <b>Notice:</b>
+                            It is strongly recommended to download and use the MyCrypto application locally. For some types of key storage formats this is the only option. Downloading the application locally allows you to perform the signing steps offline if preferred.
+
+                        </p><p>
+                            Ensure that you download the official program from MyCrypto's website. You can always find the most up-to-date releases of the desktop app on their <a href="https://github.com/MyCryptoHQ/MyCrypto/releases">releases page</a>.
                         </p>
 					</div>
 				</div>
@@ -48,16 +49,31 @@
 						<h2 class="text-white">Interacting with Contracts</h2>
 					</div>
 					<div class="col-12 col-md-6">
-						<p>Go to the MyCrypto application and click on "Interact with Contracts" under the Tools tab. Choose the Custom selection for the contract and copy the address and ABI of the Claims contract. The mainnet Claims contract address is 0xplaceholderplaceholderplaceholder. Click Access.<p></p>
-					</div>
-					<div class="col-12 col-md-6">
-                        <p>Polkadot Claims Contract ABI: <code>BIG PLACEHOLDER</code></p>
-                        <p>Polkadot Claims Contract Address: <code>0xplaceholderplaceholderplaceholder</code></p>
+						<p>
+                            Once the MyCrypto application is installed, open it and navigate to the "Interact with Contracts" in the Tools section.
+                        </p><p>
+                            In the selector, choose the Custom option for the contract options and copy the address and ABI of the Claims contract. The next slide will display this information for you. If you want to verify it yourself you can check it or <a href="">Etherscan verified contracts</a>.
 					</div>
 				</div>
 			</div>
-			<div class="col-12 col-md-4">
-                <p>Polkadot Claims Contract ABI: <code>BIG PLACEHOLDER</code></p>
+		</div>
+    </div>
+    <div>
+		<div class="row mb-5">
+			<div class="col-12 col-md-8">
+				<div class="row">
+					<div class="col-12 mb-2">
+						<div class="slider-step text-small">Step 2</div>
+						<h2 class="text-white">Claims Contract ABI and Address</h2>
+					</div>
+					<div class="col-12 col-md-6">
+                        <p>Polkadot Claims Contract ABI: <code id="claims-abi">BIG PLACEHOLDER</code></p>
+
+					</div>
+					<div class="col-12 col-md-6">
+                        <p>Polkadot Claims Contract Address: <code id="claims-address">0x</code></p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -70,18 +86,31 @@
 						<h2 class="text-white">Entering Inputs</h2>
 					</div>
 					<div class="col-12 col-md-8">
-						<p>Select the claim function from the dropdown and enter the address of the Ethereum account that holds the balance of DOT allocation for which you would like to claim DOTs. Usually this should be the same address that you are planning to send the transaction from, in exceptional cases it would be from a different key known as the amendment key (but don't worry about this if it sounds strange to you).
+                        <p>Select the <code>claim</code> function from the dropdown and enter the address of the Ethereum account that holds the balance of DOT allocation for which you are going to claim.</p>
+                            
+                        <p>The address you are claiming for is usually the same address that you are planning to send the transaction from, in exceptional cases it may be from a different key if you are using an "amended" key.
                         </p>
                         <p>
-                            Next enter in the hex encoded public key that the claims DApp outputted for you.
+                        For the public key field you will use the decoded public key of your address. On the next slide you can input your address into the decoder to get your raw public key. 
                         </p>
 					</div>
 				</div>
 			</div>
-			<div class="col-12 col-md-5">
-                Need to place the PubKey encoder here.
-                <input type='text' />
-                <p>Pretend output.</p>
+		</div>
+    </div>
+    <div>
+		<div class="row mb-5">
+			<div class="col-12 col-md-7">
+				<div class="row">
+					<div class="col-12 mb-2">
+                        <div class="slider-step text-small">Step 3</div>
+                        <h2 class="text-white">Get Your Public Key</h2>
+					</div>
+					<div class="col-12 col-md-12 text-center justify-content-center">
+                        <input type='text' class="h3 border-0 border-radius-2 text-dark p-2" onchange="globalThis.getPubkey(); "onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" id="dot-addr-inp"/>
+                        <p id="decoded-pubkey" />
+                    </div>
+				</div>
 			</div>
 		</div>
 	</div>

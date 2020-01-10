@@ -88,21 +88,6 @@ let sliderInnerA = tns({
 	lazyload: true
 });
 
-let sliderInnerA2 = tns({
-	container: '#nested_innerA_2',
-	mode: 'gallery',
-	items: 1,
-	nested: 'inner',
-	slideBy: 'page',
-	speed: 400,
-	controls: true,
-	nav: true,
-	navPosition: 'bottom',
-	controlsPosition: 'bottom',
-	autoplay: false,
-	loop: false
-});
-
 const sliderA = tns({
 	container: '.slider',
 	mode: 'carousel',

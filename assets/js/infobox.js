@@ -8,8 +8,6 @@ const FrozenTokenArtifact = require('../contracts/FrozenToken.json');
 const GOERLI_CLAIMS_ADDRESS = '0x46f8131Dd26E59F1f81299A8702B7cA3bD2B2535';
 const GOERLI_FROZENTOKEN_ADDRESS = '0xe4915b22A00f293ed49AeA9aD97738dE8BfB3949';
 
-console.log('hello world');
-
 const w3 = new Web3(new Web3.providers.HttpProvider("https://goerli.prylabs.net"));
 w3.eth.getBlockNumber().then((Res) => {
     console.log(Res);
@@ -17,6 +15,9 @@ w3.eth.getBlockNumber().then((Res) => {
 
 const frozenToken = new w3.eth.Contract(FrozenTokenArtifact.abi, GOERLI_FROZENTOKEN_ADDRESS);
 const claims = new w3.eth.Contract(ClaimsArtifact.abi, GOERLI_CLAIMS_ADDRESS);
+
+document.getElementById('claims-address').innerHTML = GOERLI_CLAIMS_ADDRESS;
+// document.getElementById('claims-abi').innerHTML = JSON.stringify(ClaimsArtifact.abi);
 
 const check = async () => {
   const { value } = document.getElementById('address-input');
@@ -122,6 +123,6 @@ const balanceCheck = async (value) => {
   }
 }
 
-globalThis.check = check;
+globalThis.infoBoxChecker = check;
 
 // npx browserify infobox.js > infobox-browser.js; npx uglify-es --mangle --compress -- infobox-browser.js > infobox.min.js; rm infobox-browser.js
