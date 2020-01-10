@@ -71,3 +71,44 @@ const slider = tns({
 // let scroll = new SmoothScroll('a[href*="#"]', {
 // 	speed: 300
 // });
+
+let sliderInnerA = tns({
+	container: '#nested_innerA',
+	mode: 'gallery',
+	items: 1,
+	nested: 'inner',
+	slideBy: 'page',
+	speed: 400,
+	controls: true,
+	nav: true,
+	navPosition: 'bottom',
+	controlsPosition: 'bottom',
+	autoplay: false,
+	loop: false,
+	lazyload: true
+});
+
+const sliderA = tns({
+	container: '.slider',
+	mode: 'carousel',
+	nested: 'outer',
+	items: 1,
+	slideBy: 'page',
+	autoplay: false,
+	controls: false,
+	nav: false,
+	loop: false,
+	speed: 600
+});
+
+(function($) {
+	$(function() {
+		$(document).ready(function() {
+			$('.jsSliderGoToA').click(function() {
+				$('.jsSliderGoToA').removeClass('active');
+				$(this).addClass('active');
+				slider.goTo($('.jsSliderGoToA').index(this));
+			});
+		});
+	});
+})(jQuery);

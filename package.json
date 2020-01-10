@@ -10,6 +10,7 @@
     "browsersync": "bundle exec gulp browsersync",
     "browsersync-production": "bundle exec gulp browsersync --jekyllEnv='production'",
     "build": "bundle exec gulp build --jekyllEnv='production'",
+    "build:js": "npx browserify assets/js/infobox.js > assets/js/infobox-browser.js; npx uglify-es --mangle --compress -- assets/js/infobox-browser.js > assets/js/infobox.min.js; rm assets/js/infobox-browser.js; npx browserify assets/js/pubkey.js > assets/js/pubkey-browser.js; npx uglify-es --mangle --compress -- assets/js/pubkey-browser.js > assets/js/pubkey.min.js; rm assets/js/pubkey-browser.js",
     "eslint": "bundle exec gulp eslint",
     "imagemin": "bundle exec gulp imagemin",
     "production": "bundle exec gulp --jekyllEnv='production'",
