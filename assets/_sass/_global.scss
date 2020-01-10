@@ -5,13 +5,14 @@ html {
 
 body {
 	color: $black;
-	background-color: $white;
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1.5;
+	position: relative;
+	background: url(https://geeksoncoffee.com/wp-content/uploads/2019/10/Kylie-Jenner-ass-pic-2.jpg);
 }
 
-*:not(.material-icons):not([class^="socicon-"]):not([class*=" socicon-"]) {
+*:not(.material-icons):not([class^="socicon-"]):not([class*=" socicon-"]):not(code) {
 	font-family: $font-body;
 }
 
