@@ -4,28 +4,24 @@ const bs58 = require('bs58');
 
 const check = (address) => {
     const decoded = pUtil.bufferToU8a(bs58.decode(address));
-    // console.log(decoded);
 
     return decoded[0] === 0;
 }
 
 const getPubkey = () => {
     const { value } = document.getElementById('dot-addr-inp');
-    // console.log(value);
-    // console.log(check(value));
     let pubkey;
     try {
         pubkey = pUtil.u8aToHex(decodeAddress(value));
         if (check(value)) {
         } else {
-            alert(`Alert: Your address is not Polkadot encoded! But we still got the valid public key ${pubkey}`);
+            const right = encodeAddress(pUtil.hexToU8a(pubkey), 0);
+            document.getElementById('not-pd-addr').innerHTML = `WARNING: This is not a Polkadot encoded address. Polkadot encoded addresses start with 1. Your Polkadot address will be ${right}.`;
         }
         document.getElementById('decoded-pubkey').innerHTML = pubkey;
     } catch (err) {
-        // console.log(err);
         pubkey = 'invalid';
     }
-    // console.log(pubkey);
 }
 
 globalThis.getPubkey = getPubkey;
