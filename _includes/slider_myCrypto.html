@@ -1,0 +1,128 @@
+<div id="nested_innerA_2">
+	<div>
+		<div class="row mb-5">
+			<div class="col-12 col-md-7">
+				<div class="row">
+					<div class="col-12 mb-2">
+						<h2 class="text-white">MyCrypto</h2>
+					</div>
+					<div class="col-12 col-md-8">
+						<p>These instructions will help you send a transaction from MyCrypto. MyCrypto is a flexible and secure Ethereum wallet that allows you to send a transaction from your Ethereum account and supports many different key storage formats.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div>
+		<div class="row mb-5">
+			<div class="col-12 col-md-8">
+				<div class="row">
+					<div class="col-12 mb-2">
+						<div class="slider-step text-small">Step 1</div>
+						<h2 class="text-white">Install MyCrypto</h2>
+					</div>
+					<div class="col-12 col-md-6">
+                        <p>NOTICE: It is much more secure to download and use the MyCrypto app locally. Please make sure to download the latest version for your operating system. You can always find the most up-to-date releases of the desktop app on their releases page.</p>
+					</div>
+					<div class="col-12 col-md-6">
+                        <p>
+                            Once you've downloaded the MyCrypto app and run it locally (run it on an airgapped computer for maximum security), head over to the claiming DApp and select Claim on Ethereum (before genesis) from the dropdown. The DApp will display the address and ABI to the Claims contract and an input asking for you to enter your Polkadot address. When you paste your Polkadot address in the input it will display a hex-encoded public key.
+                        </p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-4 slider-img-wrapper">
+				<div class="slider-img">
+					<img class="tns-lazy-img" data-src="{{site.baseurl}}/assets/images/slider/parity_signer_01.jpg">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div>
+		<div class="row mb-5">
+			<div class="col-12 col-md-8">
+				<div class="row">
+					<div class="col-12 mb-2">
+						<div class="slider-step text-small">Step 2</div>
+						<h2 class="text-white">Interacting with Contracts</h2>
+					</div>
+					<div class="col-12 col-md-6">
+						<p>Go to the MyCrypto application and click on "Interact with Contracts" under the Tools tab. Choose the Custom selection for the contract and copy the address and ABI of the Claims contract. The mainnet Claims contract address is 0xplaceholderplaceholderplaceholder. Click Access.<p></p>
+					</div>
+					<div class="col-12 col-md-6">
+                        <p>Polkadot Claims Contract ABI: <code>BIG PLACEHOLDER</code></p>
+                        <p>Polkadot Claims Contract Address: <code>0xplaceholderplaceholderplaceholder</code></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-4">
+                <p>Polkadot Claims Contract ABI: <code>BIG PLACEHOLDER</code></p>
+			</div>
+		</div>
+	</div>
+	<div>
+		<div class="row mb-5">
+			<div class="col-12 col-md-7">
+				<div class="row">
+					<div class="col-12 mb-2">
+						<div class="slider-step text-small">Step 3</div>
+						<h2 class="text-white">Entering Inputs</h2>
+					</div>
+					<div class="col-12 col-md-8">
+						<p>Select the claim function from the dropdown and enter the address of the Ethereum account that holds the balance of DOT allocation for which you would like to claim DOTs. Usually this should be the same address that you are planning to send the transaction from, in exceptional cases it would be from a different key known as the amendment key (but don't worry about this if it sounds strange to you).
+                        </p>
+                        <p>
+                            Next enter in the hex encoded public key that the claims DApp outputted for you.
+                        </p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-5">
+                Need to place the PubKey encoder here.
+                <input type='text' />
+                <p>Pretend output.</p>
+			</div>
+		</div>
+	</div>
+	<div>
+		<div class="row mb-5">
+			<div class="col-12 col-md-7">
+				<div class="row">
+					<div class="col-12 mb-2">
+						<div class="slider-step text-small">Step 4</div>
+						<h2 class="text-white">Sending the Transaction</h2>
+					</div>
+					<div class="col-12 col-md-8">
+						<p>Uncheck the box that says Automatically Calculate Gas Limit and instead use 150000 as the inputted gas limit. Feel free to change the gas price to whatever you like or keep it at the default, you can view the network average gas price here.
+						</p>
+						<p>Click Write in MyCrypto and unlock your wallet using your preferred method. Afterward click "Sign Transaction" and finally send it to the network.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-5">
+				<p>You can click on the link to view your transaction on Etherscan, when the transaction is mined to the network then you are finished! When the Polkadot network starts you will already have the balance of DOTs in your Polkadot address.</p>
+			</div>
+		</div>
+	</div>
+	<div>
+		<div class="row mb-5">
+			<div class="col-12 col-md-7">
+				<div class="row">
+					<div class="col-12 mb-2">
+						<div class="slider-step text-small">Step 5</div>
+						<h2 class="text-white">Verifying your Claim</h2>
+					</div>
+					<div class="col-12 col-md-8">
+						<p>The DOTs will not be available to you until Polkadot launches. If you would like to verify your claim, the best place to do it is on the info box at the input panel below. </p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-5">
+                <p>You can enter an Ethereum address or Polkadot address in the input to get the corresponding claim information. Inputting an Ethereum addres will show you the registered Polkadot address, public key, index, and balance of your claim. If all of this data looks right then your claim was a success! After Polkadot launches, the DOTs will be available automatically in your Polkadot address for you to use.
+                </p>
+			</div>
+		</div>
+	</div>
+</div>
