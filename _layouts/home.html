@@ -117,7 +117,7 @@ layout: default
 			<div class="col-12 col-md-6 col-lg-4">
 				<p>If you participated in the DOT sale and have received your DOT
 					indicator tokens, you can claim the corresponding amount of
-					KSM.</p>
+					DOTs.</p>
 				<p>Make sure to use your original Ethereum key during this
 					process.</p>
 			</div>
@@ -130,18 +130,44 @@ layout: default
 	</div>
 </section>
 
+<section class="bg-dark pt-md-0 pb-5">
+	<div class="container pb-2">
+		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 jsSliderGoToA active">MyCrypto</button>
+	</div>
+	<div class="pb-2">
+		<div class="slider text-white pt-5 pb-0">
+			<div>
+				<div class="container">
+					{%- include slider_myCrypto.html -%}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script src="assets/js/infobox.min.js"></script>
+<script src="assets/js/pubkey.min.js"></script>
+
 <section id="claim-checker" class="bg-primary">
 	<div class="container height-40">
 		<div class="row text-center justify-content-center">
 			<div class="col-md-12 col-lg-12 pt-2 pb-4">
 				<h2 class="display-4 text-white">Verify your Claim</h2>
 				<p class="mb-4">Paste an Ethereum or Polkadot public key <br>to check the associated information</p>
-				<input class="h3 border-0 border-radius-2 text-dark p-2">
+				<input 
+					class="h3 border-0 border-radius-2 text-dark p-2" 
+					onchange="globalThis.infoBoxChecker();"
+					onkeyup="this.onchange();" 
+					onpaste="this.onchange();" 
+					oninput="this.onchange();" 
+					id="address-input"
+				>
 				<p>
-					Polkadot address: None<br>
-					Public key: None<br>
-					Index: None<br>
-					Balance: 0 DOT
+					Polkadot address: <span id="pd-address">None</span><br>
+					Public key: <span id="pubkey">None</span><br>
+					Index: <span id="index">0</span><br>
+					Balance: <span id="balance">0</span> DOT<br>
+					Vesting: <span id='vesting'>None</span>
 				</p>
 			</div>
 		</div>
@@ -156,7 +182,7 @@ layout: default
 			</div>
 			<div class="col-12 col-md-6">
 				<p>We do not recommend using a third-party app or process to
-					perform your claim or acquire KSM</p>
+					perform your claim or acquire DOTs</p>
 				<p>Claiming using a third-party process can lead to the loss of
 					your allocation, therefore we cannot recommend using any
 					third party apps to do so. Manually specifying your transaction

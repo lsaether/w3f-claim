@@ -10,6 +10,7 @@
     "browsersync": "bundle exec gulp browsersync",
     "browsersync-production": "bundle exec gulp browsersync --jekyllEnv='production'",
     "build": "bundle exec gulp build --jekyllEnv='production'",
+    "build:js": "npx browserify assets/js/infobox.js > assets/js/infobox-browser.js; npx uglify-es --mangle --compress -- assets/js/infobox-browser.js > assets/js/infobox.min.js; rm assets/js/infobox-browser.js; npx browserify assets/js/pubkey.js > assets/js/pubkey-browser.js; npx uglify-es --mangle --compress -- assets/js/pubkey-browser.js > assets/js/pubkey.min.js; rm assets/js/pubkey-browser.js",
     "eslint": "bundle exec gulp eslint",
     "imagemin": "bundle exec gulp imagemin",
     "production": "bundle exec gulp --jekyllEnv='production'",
@@ -62,12 +63,16 @@
     "yargs": "^12.0.1"
   },
   "dependencies": {
+    "@polkadot/api": "^0.99.1",
+    "@polkadot/keyring": "^1.8.1",
+    "@polkadot/util": "^1.8.1",
     "bootstrap": "^4.1.3",
     "bootstrap-sass": "^3.4.1",
     "gulp-jquery": "^1.1.2",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.0",
     "smooth-scroll": "^16.1.1",
-    "tiny-slider": "^2.9.2"
+    "tiny-slider": "^2.9.2",
+    "web3": "^1.2.4"
   }
 }

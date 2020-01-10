@@ -28,3 +28,6 @@ doc/
 .DS_Store
 .idea
 .secret
+
+# NixOS
+default.nix
