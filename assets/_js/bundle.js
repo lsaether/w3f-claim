@@ -10,10 +10,9 @@ window.$ = $;
 
 // import 'bootstrap-sass';
 import { tns } from 'tiny-slider/src/tiny-slider';
-// import SmoothScroll from 'smooth-scroll/dist/smooth-scroll.polyfills';
 
-let sliderInner = tns({
-	container: '#nested_inner',
+let sliderInnerParitySigner = tns({
+	container: '#nested_inner_parity_signer',
 	mode: 'gallery',
 	items: 1,
 	nested: 'inner',
@@ -28,7 +27,7 @@ let sliderInner = tns({
 	lazyload: true
 });
 
-let sliderInner2 = tns({
+let sliderInnerPolkadotJsPlugin = tns({
 	container: '#nested_inner_polkadot_js_plugin',
 	mode: 'gallery',
 	items: 1,
@@ -44,8 +43,8 @@ let sliderInner2 = tns({
 	lazyload: true
 });
 
-let sliderInner3 = tns({
-	container: '#nested_inner_2',
+let sliderInnerSubkey = tns({
+	container: '#nested_inner_slider_polkadot_js',
 	mode: 'gallery',
 	items: 1,
 	nested: 'inner',
@@ -83,10 +82,6 @@ const slider = tns({
 		});
 	});
 })(jQuery);
-
-// let scroll = new SmoothScroll('a[href*="#"]', {
-// 	speed: 300
-// });
 
 let sliderInnerA = tns({
 	container: '#nested_innerA',

@@ -85,6 +85,8 @@
 		animation: pulsing-dot 1.5s ease-in-out infinite;
 	}
 
+	// slider_parity_signer
+
 	&#s1_2:after {
 		top: 27.85%;
 		left: 53.9%;
@@ -159,6 +161,73 @@
 		top: 50%;
 		left: -0.5%;
 	}
+
+	// slider_polkadot_js_plugin
+
+	&#s2_2:after {
+		top: 19.85%;
+		left: 87.5%;
+	}
+
+	&#s2_3:after {
+		top: 49.9%;
+		left: -0.5%;
+	}
+
+	&#s2_4:after {
+		top: 38.85%;
+		left: -0.5%;
+	}
+
+	&#s2_5:after {
+		top: 33%;
+		left: -0.5%;
+	}
+
+	&#s2_6:after {
+		top: 43.7%;
+		left: -0.5%;
+	}
+
+	&#s2_7:after {
+		top: 64.5%;
+		left: -0.5%;
+	}
+
+	&#s2_8:after {
+		top: 76.2%;
+		left: -0.5%;
+	}
+
+	&#s2_9:after {
+		top: 5.2%;
+		right: -7%;
+	}
+
+	&#s2_10:after {
+		top: 15.2%;
+		left: -0.5%;
+	}
+
+	&#s2_11:after {
+		top: 64%;
+		left: -0.5%;
+	}
+
+	&#s2_12:after {
+		top: 35.8%;
+		right: -7%;
+	}
+
+	&#s2_13:after {
+		top: 31.7%;
+		left: 12.5%;
+	}
+
+	&#s2_14:after {
+		top: 31.7%;
+		left: 12.5%;
+	}
 }
 
 #s1_4 {
@@ -170,6 +239,12 @@
 #s1_9_2 {
 	img {
 		border-radius: 50%;
+	}
+}
+
+#s2_1 {
+	img {
+		max-width: 260px;
 	}
 }
 

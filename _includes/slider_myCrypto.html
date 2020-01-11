@@ -7,7 +7,9 @@
 						<h2 class="text-white">MyCrypto</h2>
 					</div>
 					<div class="col-12 col-md-8">
-						<p>These instructions will help you send a transaction from MyCrypto. MyCrypto is a flexible and secure Ethereum wallet that allows you to send a transaction from your Ethereum account and supports many different key storage formats.
+						<p>These instructions will help you send a transaction from MyCrypto. MyCrypto is a flexible and secure
+							Ethereum wallet that allows you to send a transaction from your Ethereum account and supports many
+							different key storage formats.
 						</p>
 					</div>
 				</div>
@@ -23,13 +25,18 @@
 						<h2 class="text-white">Install MyCrypto</h2>
 					</div>
 					<div class="col-12 col-md-6">
-                        <p>
-                            <b>Notice:</b>
-                            It is strongly recommended to download and use the MyCrypto application locally. For some types of key storage formats this is the only option. Downloading the application locally allows you to perform the signing steps offline if preferred.
+						<p>
+							<b>Notice:</b>
+							It is strongly recommended to download and use the MyCrypto application locally. For some types of key
+							storage formats this is the only option. Downloading the application locally allows you to perform the
+							signing steps offline if preferred.
 
-                        </p><p>
-                            Ensure that you download the official program from MyCrypto's website. You can always find the most up-to-date releases of the desktop app on their <a href="https://github.com/MyCryptoHQ/MyCrypto/releases">releases page</a>.
-                        </p>
+						</p>
+						<p>
+							Ensure that you download the official program from MyCrypto's website. You can always find the most
+							up-to-date releases of the desktop app on their <a
+								href="https://github.com/MyCryptoHQ/MyCrypto/releases">releases page</a>.
+						</p>
 					</div>
 				</div>
 			</div>
@@ -50,15 +57,19 @@
 					</div>
 					<div class="col-12 col-md-6">
 						<p>
-                            Once the MyCrypto application is installed, open it and navigate to the "Interact with Contracts" in the Tools section.
-                        </p><p>
-                            In the selector, choose the Custom option for the contract options and copy the address and ABI of the Claims contract. The next slide will display this information for you. If you want to verify it yourself you can check it or <a href="">Etherscan verified contracts</a>.
+							Once the MyCrypto application is installed, open it and navigate to the "Interact with Contracts" in the
+							Tools section.
+						</p>
+						<p>
+							In the selector, choose the Custom option for the contract options and copy the address and ABI of the
+							Claims contract. The next slide will display this information for you. If you want to verify it yourself
+							you can check it or <a href="">Etherscan verified contracts</a>.
 					</div>
 				</div>
 			</div>
 		</div>
-    </div>
-    <div>
+	</div>
+	<div>
 		<div class="row mb-5">
 			<div class="col-12 col-md-8">
 				<div class="row">
@@ -68,11 +79,13 @@
 					</div>
 					<div class="col-12 col-md-6">
 						<div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
-							<p>Polkadot Claims Contract ABI: <a href="/assets/abi.txt">Copy the ABI from here.</a>. (Use `ctrl-a` and `ctrl-c`).
-						</p></div>
+							<p>Polkadot Claims Contract ABI: <a href="/assets/abi.txt">Copy the ABI from here.</a>. (Use `ctrl-a` and
+								`ctrl-c`).
+							</p>
+						</div>
 					</div>
 					<div class="col-12 col-md-6">
-                        <p>Polkadot Claims Contract Address: <span id="claims-address">0x</span></p>
+						<p>Polkadot Claims Contract Address: <span id="claims-address">0x</span></p>
 					</div>
 				</div>
 			</div>
@@ -87,34 +100,38 @@
 						<h2 class="text-white">Entering Inputs</h2>
 					</div>
 					<div class="col-12 col-md-6">
-                        <p>Select the <code>claim</code> function from the dropdown and enter the address of the Ethereum account that holds the balance of DOT allocation for which you are going to claim.</p>
-                            
-                        <p>The address you are claiming for is usually the same address that you are planning to send the transaction from, in exceptional cases it may be from a different key if you are using an "amended" key.
-                        </p>
+						<p>Select the <code>claim</code> function from the dropdown and enter the address of the Ethereum account
+							that holds the balance of DOT allocation for which you are going to claim.</p>
+
+						<p>The address you are claiming for is usually the same address that you are planning to send the
+							transaction from, in exceptional cases it may be from a different key if you are using an "amended" key.
+						</p>
 
 					</div>
 					<div class="col-12 col-md-6">
 						<p>
-							For the public key field you will use the decoded public key of your address. On the next slide you can input your address into the decoder to get your raw public key. 
-							</p>
+							For the public key field you will use the decoded public key of your address. On the next slide you can
+							input your address into the decoder to get your raw public key.
+						</p>
 					</div>
 				</div>
 			</div>
 		</div>
-    </div>
-    <div>
+	</div>
+	<div>
 		<div class="row mb-5">
 			<div class="col-12 col-md-7">
 				<div class="row">
 					<div class="col-12 mb-2">
-                        <div class="slider-step text-small">Step 3</div>
-                        <h2 class="text-white">Get Your Public Key</h2>
+						<div class="slider-step text-small">Step 3</div>
+						<h2 class="text-white">Get Your Public Key</h2>
 					</div>
 					<div class="col-12 col-md-12 text-center justify-content-center">
-						<input type='text' class="h3 border-0 border-radius-2 text-dark p-2" onchange="globalThis.getPubkey(); "onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" id="dot-addr-inp"/>
+						<input type='text' class="h3 border-0 border-radius-2 text-dark p-2" onchange="globalThis.getPubkey(); "
+							onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" id="dot-addr-inp" />
 						<p id="not-pd-addr" class="red-font" />
-                        <p id="decoded-pubkey" />
-                    </div>
+						<p id="decoded-pubkey" />
+					</div>
 				</div>
 			</div>
 		</div>
@@ -128,15 +145,20 @@
 						<h2 class="text-white">Sending the Transaction</h2>
 					</div>
 					<div class="col-12 col-md-8">
-						<p>Uncheck the box that says Automatically Calculate Gas Limit and instead use 150000 as the inputted gas limit. Feel free to change the gas price to whatever you like or keep it at the default, you can view the network average gas price here.
+						<p>Uncheck the box that says Automatically Calculate Gas Limit and instead use 150000 as the inputted gas
+							limit. Feel free to change the gas price to whatever you like or keep it at the default, you can view the
+							network average gas price here.
 						</p>
-						<p>Click Write in MyCrypto and unlock your wallet using your preferred method. Afterward click "Sign Transaction" and finally send it to the network.
+						<p>Click Write in MyCrypto and unlock your wallet using your preferred method. Afterward click "Sign
+							Transaction" and finally send it to the network.
 						</p>
 					</div>
 				</div>
 			</div>
 			<div class="col-12 col-md-5">
-				<p>You can click on the link to view your transaction on Etherscan, when the transaction is mined to the network then you are finished! When the Polkadot network starts you will already have the balance of DOTs in your Polkadot address.</p>
+				<p>You can click on the link to view your transaction on Etherscan, when the transaction is mined to the network
+					then you are finished! When the Polkadot network starts you will already have the balance of DOTs in your
+					Polkadot address.</p>
 			</div>
 		</div>
 	</div>
@@ -149,13 +171,17 @@
 						<h2 class="text-white">Verifying your Claim</h2>
 					</div>
 					<div class="col-12 col-md-8">
-						<p>The DOTs will not be available to you until Polkadot launches. If you would like to verify your claim, the best place to do it is on the info box at the input panel below. </p>
+						<p>The DOTs will not be available to you until Polkadot launches. If you would like to verify your claim,
+							the best place to do it is on the info box at the input panel below. </p>
 					</div>
 				</div>
 			</div>
 			<div class="col-12 col-md-5">
-                <p>You can enter an Ethereum address or Polkadot address in the input to get the corresponding claim information. Inputting an Ethereum addres will show you the registered Polkadot address, public key, index, and balance of your claim. If all of this data looks right then your claim was a success! After Polkadot launches, the DOTs will be available automatically in your Polkadot address for you to use.
-                </p>
+				<p>You can enter an Ethereum address or Polkadot address in the input to get the corresponding claim
+					information. Inputting an Ethereum addres will show you the registered Polkadot address, public key, index,
+					and balance of your claim. If all of this data looks right then your claim was a success! After Polkadot
+					launches, the DOTs will be available automatically in your Polkadot address for you to use.
+				</p>
 			</div>
 		</div>
 	</div>

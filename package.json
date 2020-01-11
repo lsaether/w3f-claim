@@ -71,7 +71,6 @@
     "gulp-jquery": "^1.1.2",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.0",
-    "smooth-scroll": "^16.1.1",
     "tiny-slider": "^2.9.2",
     "web3": "^1.2.4"
   }
