@@ -43,7 +43,7 @@ let sliderInnerPolkadotJsPlugin = tns({
 	lazyload: true
 });
 
-let sliderInnerSubkey = tns({
+let sliderInnerPolkadotJs = tns({
 	container: '#nested_inner_slider_polkadot_js',
 	mode: 'gallery',
 	items: 1,
@@ -55,7 +55,8 @@ let sliderInnerSubkey = tns({
 	navPosition: 'bottom',
 	controlsPosition: 'bottom',
 	autoplay: false,
-	loop: false
+	loop: false,
+	lazyload: true
 });
 
 const slider = tns({

@@ -201,7 +201,7 @@
 
 	&#s2_9:after {
 		top: 5.2%;
-		right: -7%;
+		// right: -7%;
 	}
 
 	&#s2_10:after {
@@ -216,7 +216,7 @@
 
 	&#s2_12:after {
 		top: 35.8%;
-		right: -7%;
+		// right: -7%;
 	}
 
 	&#s2_13:after {
@@ -227,6 +227,32 @@
 	&#s2_14:after {
 		top: 31.7%;
 		left: 12.5%;
+	}
+
+	// slider polkadot js
+
+	&#s4_1:after {
+		top: 49.9%;
+		left: -0.5%;
+	}
+
+	&#s4_2:after {
+		top: 22.4%;
+		left: -0.5%;
+	}
+
+	&#s4_3:after {
+		top: 29.5%;
+		left: -0.5%;
+	}
+
+	&#s4_4:after {
+		top: 51.4%;
+		left: -0.5%;
+	}
+
+	&#s4_5:after {
+		top: 43.9%;
 	}
 }
 
@@ -242,7 +268,8 @@
 	}
 }
 
-#s2_1 {
+#s2_1,
+#s4_0 {
 	img {
 		max-width: 260px;
 	}
