@@ -76,9 +76,13 @@ const slider = tns({
 	$(function() {
 		$(document).ready(function() {
 			$('.jsSliderGoTo').click(function() {
-				$('.jsSliderGoTo').removeClass('active');
-				$(this).addClass('active');
-				slider.goTo($('.jsSliderGoTo').index(this));
+				let sliderIndex = $(this).data('slider') - 1;
+				slider.goTo(sliderIndex);
+				let index = slider.getInfo().index;
+				$('.jsSliderGoTo.jsActive').removeClass('active');
+				$('.jsSliderGoTo.jsActive')
+					.eq(index)
+					.addClass('active');
 			});
 		});
 	});
@@ -117,9 +121,13 @@ const sliderA = tns({
 	$(function() {
 		$(document).ready(function() {
 			$('.jsSliderGoToA').click(function() {
-				$('.jsSliderGoToA').removeClass('active');
-				$(this).addClass('active');
-				slider.goTo($('.jsSliderGoToA').index(this));
+				let sliderIndex = $(this).data('slider') - 1;
+				slider.goTo(sliderIndex);
+				let index = slider.getInfo().index;
+				$('.jsSliderGoToA.jsActive').removeClass('active');
+				$('.jsSliderGoToA.jsActive')
+					.eq(index)
+					.addClass('active');
 			});
 		});
 	});

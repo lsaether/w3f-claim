@@ -8,9 +8,9 @@ layout: default
 			<div class="col-12 col-lg-8 pt-4 pb-3">
 				<h1 class="display-4 text-white mb-3">Time to Claim Your Dots</h1>
 				<p class="lead">
-					This site includes a step-by-step guide to claim your dots as well as verify your claim and check
-					your dot balance. By completing this process, your dots holdings will be transposed onto Polkadot with the
-					network's genesis block. This site is only for holders of dot allocation indicator tokens.
+					This site includes a step-by-step guide to claim your dots as well as verify your claim and check your dot
+					balance. By completing this process, your dots holdings will be transposed onto Polkadot with the network's
+					genesis block. This site is only for holders of dot allocation indicator tokens.
 				</p>
 			</div>
 		</div>
@@ -25,12 +25,17 @@ layout: default
 					<div class="card-body p-3">
 						<h6>1. Generate a Native Polkadot Address</h6>
 						<div class="mt-5 pt-2">
-							<a href="#wallet-create" class="btn btn-primary btn-bg-dark mr-1 mb-2 shadow">ParitySigner</a>
-							<a href="#wallet-create" class="btn btn-primary btn-bg-dark mr-1 mb-2 shadow">Polkadot{.js}
+							<a href="#wallet-create" class="btn btn-primary btn-bg-dark mr-1 mb-2 shadow jsSliderGoTo"
+								data-slider="1">ParitySigner</a>
+							<a href="#wallet-create" class="btn btn-primary btn-bg-dark mr-1 mb-2 shadow jsSliderGoTo"
+								data-slider="2">Polkadot{.js}
 								Browser Plugin</a>
-							<a href="#wallet-create" class="btn btn-primary btn-bg-dark mr-1 mb-2 shadow">Subkey</a>
-							<a href="#wallet-create" class="btn btn-primary btn-bg-dark mr-1 mb-2 shadow">polkadot.js</a>
-							<a href="#wallet-create" class="btn btn-primary btn-bg-dark mr-1 mb-2 shadow">Coinbase</a>
+							<a href="#wallet-create" class="btn btn-primary btn-bg-dark mr-1 mb-2 shadow jsSliderGoTo"
+								data-slider="3">Subkey</a>
+							<a href="#wallet-create" class="btn btn-primary btn-bg-dark mr-1 mb-2 shadow jsSliderGoTo"
+								data-slider="4">polkadot.js</a>
+							<a href="#wallet-create" class="btn btn-primary btn-bg-dark mr-1 mb-2 shadow jsSliderGoTo"
+								data-slider="5">Coinbase</a>
 						</div>
 					</div>
 				</div>
@@ -40,7 +45,8 @@ layout: default
 					<div class="card-body p-3">
 						<h6 class="mb-5">2. Claim Your Dots</h6>
 						<div class="mt-5 pt-2">
-							<a href="#claim-process" class="btn btn-primary btn-bg-dark mr-2 mb-2 shadow">MyCrypto</a>
+							<a href="#claim-process" class="btn btn-primary btn-bg-dark mr-2 mb-2 shadow jsSliderGoTo"
+								data-slider="1">MyCrypto</a>
 						</div>
 					</div>
 				</div>
@@ -49,7 +55,6 @@ layout: default
 				<div class="card border border-radius-2 min-100">
 					<div class="card-body p-3">
 						<h6 class="mb-5">3. Verify your <br>Claim</h6>
-						<!-- <img src="{{site.baseurl}}/assets/images/check_circle-24px.svg"> -->
 						<a href="#claim-verify" class="btn btn-primary bg-primary text-white mr-2 mb-2 shadow">Checker</a>
 					</div>
 				</div>
@@ -66,11 +71,16 @@ layout: default
 
 <section class="bg-dark pt-md-0 pb-5">
 	<div class="container pb-2">
-		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 jsSliderGoTo active">Parity Signer</button>
-		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 jsSliderGoTo">Polkadot{.js} Browser Plugin</button>
-		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 jsSliderGoTo">Subkey</button>
-		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 jsSliderGoTo">polkadot.js</button>
-		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 jsSliderGoTo">Coinbase</button>
+		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 jsSliderGoTo jsActive active" data-slider="1">Parity
+			Signer</button>
+		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 jsSliderGoTo jsActive" data-slider="2">Polkadot{.js}
+			Browser
+			Plugin</button>
+		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 jsSliderGoTo jsActive" data-slider="3">Subkey</button>
+		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 jsSliderGoTo jsActive"
+			data-slider="4">polkadot.js</button>
+		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 jsSliderGoTo jsActive"
+			data-slider="5">Coinbase</button>
 	</div>
 	<div id="wallet-create" class="pb-2">
 		<div class="slider text-white pt-5 pb-0">
@@ -127,7 +137,7 @@ layout: default
 
 <section class="bg-dark pt-md-0 pb-5">
 	<div class="container pb-2">
-		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 jsSliderGoToA active">MyCrypto</button>
+		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 jsSliderGoToA jsActive active">MyCrypto</button>
 	</div>
 	<div id="claim-process" class="pb-2">
 		<div class="slider text-white pt-5 pb-0">
