@@ -17,7 +17,7 @@ const frozenToken = new w3.eth.Contract(FrozenTokenArtifact.abi, GOERLI_FROZENTO
 const claims = new w3.eth.Contract(ClaimsArtifact.abi, GOERLI_CLAIMS_ADDRESS);
 
 document.getElementById('claims-address').innerHTML = GOERLI_CLAIMS_ADDRESS;
-// document.getElementById('claims-abi').innerHTML = JSON.stringify(ClaimsArtifact.abi);
+document.getElementById('contract-abi').innerHTML = JSON.stringify(ClaimsArtifact.abi);
 
 const check = async () => {
   const { value } = document.getElementById('address-input');
@@ -118,6 +118,7 @@ const balanceCheck = async (value) => {
       index: index || null,
       pubKey: pubKey || null,
       vested: vestingAmt,
+      polkadotAddress: pubkey !== 'None' ? encodeAddress(pUtil.hexToU8a(pubkey), 0) : null,
     },
     noBalance: false,
   }
