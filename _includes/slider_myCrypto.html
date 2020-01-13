@@ -1,16 +1,23 @@
 <div id="nested_innerA">
 	<div>
 		<div class="row mb-5">
-			<div class="col-12 col-md-7">
+			<div class="col-12">
 				<div class="row">
 					<div class="col-12 mb-2">
 						<h2 class="text-white">MyCrypto</h2>
 					</div>
-					<div class="col-12 col-md-8">
+					<div class="col-12 col-md-5">
 						<p>These instructions will help you send a transaction from MyCrypto. MyCrypto is a flexible and secure
 							Ethereum wallet that allows you to send a transaction from your Ethereum account and supports many
 							different key storage formats.
 						</p>
+					</div>
+					<div class="col-12 col-md-7">
+						<img 
+							class="tns-lazy-img shadow-none"
+							data-src="{{site.baseurl}}/assets/images/logo-mycrypto.svg"
+							width='80%'
+						/>
 					</div>
 				</div>
 			</div>
@@ -18,13 +25,13 @@
 	</div>
 	<div>
 		<div class="row mb-5">
-			<div class="col-12 col-md-8">
+			<div class="col-12 col-md-5">
 				<div class="row">
 					<div class="col-12 mb-2">
 						<div class="slider-step text-small">Step 1</div>
 						<h2 class="text-white">Install MyCrypto</h2>
 					</div>
-					<div class="col-12 col-md-6">
+					<div class="col-12 col-md-12">
 						<p>
 							<b>Notice:</b>
 							It is strongly recommended to download and use the MyCrypto application locally. For some types of key
@@ -40,22 +47,22 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-12 col-md-4 slider-img-wrapper">
+			<div class="col-12 col-md-7 slider-img-wrapper">
 				<div class="slider-img">
-					<img class="tns-lazy-img" data-src="{{site.baseurl}}/assets/images/slider/parity_signer_01.jpg">
+					<img class="tns-lazy-img" data-src="{{site.baseurl}}/assets/images/MyCrypto_012.png">
 				</div>
 			</div>
 		</div>
 	</div>
 	<div>
 		<div class="row mb-5">
-			<div class="col-12 col-md-8">
+			<div class="col-12 col-md-5">
 				<div class="row">
 					<div class="col-12 mb-2">
 						<div class="slider-step text-small">Step 2</div>
 						<h2 class="text-white">Interacting with Contracts</h2>
 					</div>
-					<div class="col-12 col-md-6">
+					<div class="col-12 col-md-12">
 						<p>
 							Once the MyCrypto application is installed, open it and navigate to the "Interact with Contracts" in the
 							Tools section.
@@ -67,11 +74,16 @@
 					</div>
 				</div>
 			</div>
+			<div class="col-12 col-md-7 slider-img-wrapper">
+				<div class="slider-img">
+					<img class="tns-lazy-img" data-src="{{site.baseurl}}/assets/images/MyCrypto_014.png">
+				</div>
+			</div>
 		</div>
 	</div>
 	<div>
 		<div class="row mb-5">
-			<div class="col-12 col-md-8">
+			<div class="col-12 col-md-12">
 				<div class="row">
 					<div class="col-12 mb-2">
 						<div class="slider-step text-small">Step 2</div>
@@ -79,9 +91,10 @@
 					</div>
 					<div class="col-12 col-md-6">
 						<div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
-							<p>Polkadot Claims Contract ABI: <a href="/assets/abi.txt">Copy the ABI from here.</a>. (Use `ctrl-a` and
+							<p>Polkadot Claims Contract ABI: <a href="{{site.baseurl}}/assets/abi.txt">Copy the ABI from here.</a>. (Use `ctrl-a` and
 								`ctrl-c`).
 							</p>
+							<textarea rows="4" cols="50" id="contract-abi" class="abi-textarea"></textarea>
 						</div>
 					</div>
 					<div class="col-12 col-md-6">
@@ -93,9 +106,9 @@
 	</div>
 	<div>
 		<div class="row mb-5">
-			<div class="col-12 col-md-7">
+			<div class="col-12 col-md-12">
 				<div class="row">
-					<div class="col-12 mb-2">
+					<div class="col-12 mb-2 col-md-7">
 						<div class="slider-step text-small">Step 3</div>
 						<h2 class="text-white">Entering Inputs</h2>
 					</div>
@@ -115,22 +128,9 @@
 						</p>
 					</div>
 				</div>
-			</div>
-		</div>
-	</div>
-	<div>
-		<div class="row mb-5">
-			<div class="col-12 col-md-7">
-				<div class="row">
-					<div class="col-12 mb-2">
-						<div class="slider-step text-small">Step 3</div>
-						<h2 class="text-white">Get Your Public Key</h2>
-					</div>
-					<div class="col-12 col-md-12 text-center justify-content-center">
-						<input type='text' class="h3 border-0 border-radius-2 text-dark p-2" onchange="globalThis.getPubkey(); "
-							onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" id="dot-addr-inp" />
-						<p id="not-pd-addr" class="red-font" />
-						<p id="decoded-pubkey" />
+				<div class="col-12 col-md-5 slider-img-wrapper">
+					<div class="slider-img">
+						<img class="tns-lazy-img" data-src="{{site.baseurl}}/assets/images/MyCrypto_016.png">
 					</div>
 				</div>
 			</div>
@@ -138,13 +138,32 @@
 	</div>
 	<div>
 		<div class="row mb-5">
-			<div class="col-12 col-md-7">
+			<div class="col-12 col-md-12">
 				<div class="row">
 					<div class="col-12 mb-2">
+						<div class="slider-step text-small">Step 3</div>
+						<h2 class="text-white">Get Your Public Key</h2>
+					</div>
+					<div class="col-12 col-md-12 text-center justify-content-center">
+						<p>Enter your Polkadot Address below:</p>
+						<input type='text' class="h3 border-0 border-radius-2 text-dark p-2" onchange="globalThis.getPubkey(); "
+							onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" id="dot-addr-inp" />
+						<p id="not-pd-addr" class="red-font" />
+						<p id="decoded-pubkey">Your decoded public key will appear here.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div>
+		<div class="row mb-5">
+			<div class="col-12 col-md-12">
+				<div class="row">
+					<div class="col-12 mb-2 col-md-12">
 						<div class="slider-step text-small">Step 4</div>
 						<h2 class="text-white">Sending the Transaction</h2>
 					</div>
-					<div class="col-12 col-md-8">
+					<div class="col-12 col-md-6">
 						<p>Uncheck the box that says Automatically Calculate Gas Limit and instead use 150000 as the inputted gas
 							limit. Feel free to change the gas price to whatever you like or keep it at the default, you can view the
 							network average gas price here.
@@ -153,35 +172,35 @@
 							Transaction" and finally send it to the network.
 						</p>
 					</div>
+					<div class="col-12 col-md-6">
+						<p>You can click on the link to view your transaction on Etherscan, when the transaction is mined to the network
+							then you are finished! When the Polkadot network starts you will already have the balance of DOTs in your
+							Polkadot address.</p>
 				</div>
-			</div>
-			<div class="col-12 col-md-5">
-				<p>You can click on the link to view your transaction on Etherscan, when the transaction is mined to the network
-					then you are finished! When the Polkadot network starts you will already have the balance of DOTs in your
-					Polkadot address.</p>
+				</div>
 			</div>
 		</div>
 	</div>
 	<div>
 		<div class="row mb-5">
-			<div class="col-12 col-md-7">
+			<div class="col-12 col-md-12">
 				<div class="row">
-					<div class="col-12 mb-2">
+					<div class="col-12 mb-2 col-md-12">
 						<div class="slider-step text-small">Step 5</div>
 						<h2 class="text-white">Verifying your Claim</h2>
 					</div>
-					<div class="col-12 col-md-8">
+					<div class="col-12 col-md-6">
 						<p>The DOTs will not be available to you until Polkadot launches. If you would like to verify your claim,
 							the best place to do it is on the info box at the input panel below. </p>
 					</div>
+					<div class="col-12 col-md-6">
+						<p>You can enter an Ethereum address or Polkadot address in the input to get the corresponding claim
+							information. Inputting an Ethereum addres will show you the registered Polkadot address, public key, index,
+							and balance of your claim. If all of this data looks right then your claim was a success! After Polkadot
+							launches, the DOTs will be available automatically in your Polkadot address for you to use.
+						</p>
+					</div>
 				</div>
-			</div>
-			<div class="col-12 col-md-5">
-				<p>You can enter an Ethereum address or Polkadot address in the input to get the corresponding claim
-					information. Inputting an Ethereum addres will show you the registered Polkadot address, public key, index,
-					and balance of your claim. If all of this data looks right then your claim was a success! After Polkadot
-					launches, the DOTs will be available automatically in your Polkadot address for you to use.
-				</p>
 			</div>
 		</div>
 	</div>
