@@ -17,13 +17,14 @@ layout: default
 	</div>
 </section>
 
-<section class="bg-white">
+<section class="bg-white pb-0">
 	<div class="container">
-		<div class="row justify-content-start py-2">
+		<div class="row justify-content-start">
 			<div class="col-12 col-md-6">
 				<div class="card border border-radius-2 min-100">
 					<div class="card-body p-3">
-						<h6>1. Generate a Native Polkadot Address</h6>
+						<div class="text-secondary">Step 1</div>
+						<h6>Generate a Native Polkadot Address</h6>
 						<div class="mt-5 pt-2">
 							<a href="#wallet-create" class="btn btn-primary btn-bg-dark mr-1 mb-2 shadow jsSliderGoTo"
 								data-slider="1">ParitySigner</a>
@@ -43,7 +44,8 @@ layout: default
 			<div class="col-12 col-md-4">
 				<div class="card border border-radius-2 min-100">
 					<div class="card-body p-3">
-						<h6 class="mb-5">2. Claim Your Dots</h6>
+						<div class="text-secondary">Step 2</div>
+						<h6 class="mb-5">Claim Your Dots</h6>
 						<div class="mt-5 pt-2">
 							<a href="#claim-process" class="btn btn-primary btn-bg-dark mr-2 mb-2 shadow jsSliderGoTo"
 								data-slider="1">MyCrypto</a>
@@ -54,8 +56,11 @@ layout: default
 			<div class="col-12 col-md-2">
 				<div class="card border border-radius-2 min-100">
 					<div class="card-body p-3">
-						<h6 class="mb-5">3. Verify your <br>Claim</h6>
-						<a href="#claim-verify" class="btn btn-primary bg-primary text-white mr-2 mb-2 shadow">Checker</a>
+						<div class="text-secondary">Step 3</div>
+						<h6 class="mb-5">Verify your <br>Claim</h6>
+						<div class="text-center">
+							<a href="#claim-verify" class="btn btn-primary bg-primary text-white shadow">Checker</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -115,10 +120,11 @@ layout: default
 </section>
 
 <section class="bg-white">
-	<div class="container spacer-y-2">
+	<div class="container">
 		<div class="row justify-content-start">
 			<div class="col-12 mb-4">
-				<h2 class="display-4">2. Claim Your Dots</h2>
+				<div class="display-4 text-secondary mb-2">Step 2</div>
+				<h2 class="display-4">Claim Your Dots</h2>
 			</div>
 			<div class="col-12 col-md-6 col-lg-4">
 				<p>If you participated in a previous dot sale and received your dot allocation
@@ -157,9 +163,10 @@ layout: default
 
 <section id="claim-verify" class="bg-primary">
 	<div class="container height-40">
-		<div class="row text-center justify-content-center">
+		<div class="row justify-content-center">
 			<div class="col-md-12 col-lg-12 pt-2 pb-4">
-				<h2 class="display-4 text-white">3. Verify your Claim</h2>
+				<div class="display-4 mb-2 opacity-70">Step 3</div>
+				<h2 class="display-4 text-white">Verify your Claim</h2>
 				<p class="mb-4">Paste an Ethereum or Polkadot public key <br>to check the associated information</p>
 				<input class="h3 border-0 border-radius-2 text-dark p-2" onchange="globalThis.infoBoxChecker();"
 					onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" id="address-input">
