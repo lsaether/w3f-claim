@@ -5,8 +5,13 @@ layout: default
 <section class="bg-primary">
 	<div class="container height-30">
 		<div class="row text-center justify-content-center">
-			<div class="col-md-12 col-lg-12 pt-2 pb-4">
-				<h1 class="display-4 text-white">Welcome to DOT Claims</h1>
+			<div class="col-12 col-lg-8 pt-4 pb-3">
+				<h1 class="display-4 text-white mb-3">Time to Claim Your Dots</h1>
+				<p class="lead">
+					This site includes a step-by-step guide to claim your dots as well as verify your claim and check
+					your dot balance. By completing this process, your dots holdings will be transposed onto Polkadot with the
+					network's genesis block. This site is only for holders of dot allocation indicator tokens.
+				</p>
 			</div>
 		</div>
 	</div>
@@ -14,23 +19,18 @@ layout: default
 
 <section class="bg-white">
 	<div class="container">
-		<div class="row justify-content-start mb-5">
-			<div class="col-12 col-md-8">
-				<h2 class="h1">This DApp will walk you through the&nbsp;process of&nbsp;claiming DOT’s. In order to do so, you
-					need to have an allocation of&nbsp;DOTs.</h2>
-			</div>
-		</div>
-		<div class="row justify-content-start py-4">
+		<div class="row justify-content-start py-2">
 			<div class="col-12 col-md-6">
 				<div class="card border border-radius-2 min-100">
 					<div class="card-body p-3">
-						<h6>1. Create a Wallet with <br>DOT account</h6>
+						<h6>1. Generate a Native Polkadot Address</h6>
 						<div class="mt-5 pt-2">
-							<button class="btn btn-bg-light mr-1 mb-2 shadow">Parity Signer</button>
-							<button class="btn btn-bg-light mr-1 mb-2 shadow ">Polkadot{.js} Browser Plugin</button>
-							<button class="btn btn-bg-light mr-1 mb-2 shadow ">Subkey</button>
-							<button class="btn btn-bg-light mr-1 mb-2 shadow ">polkadot.js</button>
-							<button class="btn btn-bg-light mr-1 mb-2 shadow ">Coinbase</button>
+							<a href="#wallet-create" class="btn btn-primary btn-bg-dark mr-1 mb-2 shadow">ParitySigner</a>
+							<a href="#wallet-create" class="btn btn-primary btn-bg-dark mr-1 mb-2 shadow">Polkadot{.js}
+								Browser Plugin</a>
+							<a href="#wallet-create" class="btn btn-primary btn-bg-dark mr-1 mb-2 shadow">Subkey</a>
+							<a href="#wallet-create" class="btn btn-primary btn-bg-dark mr-1 mb-2 shadow">polkadot.js</a>
+							<a href="#wallet-create" class="btn btn-primary btn-bg-dark mr-1 mb-2 shadow">Coinbase</a>
 						</div>
 					</div>
 				</div>
@@ -38,9 +38,9 @@ layout: default
 			<div class="col-12 col-md-4">
 				<div class="card border border-radius-2 min-100">
 					<div class="card-body p-3">
-						<h6 class="mb-5">2. DOT’s Claim</h6>
+						<h6 class="mb-5">2. Claim Your Dots</h6>
 						<div class="mt-5 pt-2">
-							<button class="btn btn-bg-light mr-1 mb-2 shadow">MyCrypto</button>
+							<a href="#claim-process" class="btn btn-primary btn-bg-dark mr-2 mb-2 shadow">MyCrypto</a>
 						</div>
 					</div>
 				</div>
@@ -49,7 +49,8 @@ layout: default
 				<div class="card border border-radius-2 min-100">
 					<div class="card-body p-3">
 						<h6 class="mb-5">3. Verify your <br>Claim</h6>
-						<img src="{{site.baseurl}}/assets/images/check_circle-24px.svg">
+						<!-- <img src="{{site.baseurl}}/assets/images/check_circle-24px.svg"> -->
+						<a href="#claim-verify" class="btn btn-primary bg-primary text-white mr-2 mb-2 shadow">Checker</a>
 					</div>
 				</div>
 			</div>
@@ -71,7 +72,7 @@ layout: default
 		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 jsSliderGoTo">polkadot.js</button>
 		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 jsSliderGoTo">Coinbase</button>
 	</div>
-	<div class="pb-2">
+	<div id="wallet-create" class="pb-2">
 		<div class="slider text-white pt-5 pb-0">
 			<div>
 				<div class="container">
@@ -95,7 +96,7 @@ layout: default
 			</div>
 			<div>
 				<div class="container">
-					<h2 class="text-white">Coinbase</h2>
+					{%- include slider_coinbase.html -%}
 				</div>
 			</div>
 		</div>
@@ -106,18 +107,18 @@ layout: default
 	<div class="container spacer-y-2">
 		<div class="row justify-content-start">
 			<div class="col-12 mb-4">
-				<h2 class="display-4">2. DOT’s Claim</h2>
+				<h2 class="display-4">2. Claim Your Dots</h2>
 			</div>
 			<div class="col-12 col-md-6 col-lg-4">
-				<p>If you participated in the DOT sale and have received your DOT
-					indicator tokens, you can claim the corresponding amount of
-					DOTs.</p>
+				<p>If you participated in a previous dot sale and received your dot allocation
+					indicator tokens, you can now claim your dots, i.e. transpose them from the Ethereum address where your dot
+					allocation indicator tokens were stored to a native Polkadot address.</p>
 				<p>Make sure to use your original Ethereum key during this
 					process.</p>
 			</div>
 			<div class="col-12 col-md-6 col-lg-4 mb-4">
 				<p>If you don’t have a Polkadot address, you will
-					need to generate a Polkadot address.</p>
+					need to generate one.</p>
 				<a href="#">Go to Create a Wallet</a>
 			</div>
 		</div>
@@ -128,7 +129,7 @@ layout: default
 	<div class="container pb-2">
 		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 jsSliderGoToA active">MyCrypto</button>
 	</div>
-	<div class="pb-2">
+	<div id="claim-process" class="pb-2">
 		<div class="slider text-white pt-5 pb-0">
 			<div>
 				<div class="container">
@@ -142,20 +143,14 @@ layout: default
 <script src="assets/js/infobox.min.js"></script>
 <script src="assets/js/pubkey.min.js"></script>
 
-<section id="claim-checker" class="bg-primary">
+<section id="claim-verify" class="bg-primary">
 	<div class="container height-40">
 		<div class="row text-center justify-content-center">
 			<div class="col-md-12 col-lg-12 pt-2 pb-4">
 				<h2 class="display-4 text-white">3. Verify your Claim</h2>
 				<p class="mb-4">Paste an Ethereum or Polkadot public key <br>to check the associated information</p>
-				<input 
-					class="h3 border-0 border-radius-2 text-dark p-2" 
-					onchange="globalThis.infoBoxChecker();"
-					onkeyup="this.onchange();" 
-					onpaste="this.onchange();" 
-					oninput="this.onchange();" 
-					id="address-input"
-				>
+				<input class="h3 border-0 border-radius-2 text-dark p-2" onchange="globalThis.infoBoxChecker();"
+					onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" id="address-input">
 				<p>
 					Polkadot address: <span id="pd-address">None</span><br>
 					Public key: <span id="pubkey">None</span><br>
