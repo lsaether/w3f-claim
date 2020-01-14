@@ -35,9 +35,8 @@ layout: default
 		<div class="row justify-content-center">
 			<div class="col-md-12 col-lg-12 pt-2 pb-4">
 				<div class="display-4 mb-2 opacity-70 text-white">Step 1</div>
-				<h2 class="display-4 text-white">Verify your Ethereum address</h2>
-				<p class="mb-4 text-white">Paste an Ethereum address to check the associated information</p>
-				<input class="h3 border-0 border-radius-2 text-dark p-2">
+				<h2 class="display-4 text-white mb-5">Verify your Ethereum <br>address</h2>
+				<input class="dashboard-input mb-5" placeholder="Paste an Ethereum address to check the associated information">
 				<p class="text-white">
 					Ethereum address:
 					<span id="eth-pd-address">None</span><br>
@@ -149,10 +148,11 @@ layout: default
 		<div class="row justify-content-center">
 			<div class="col-md-12 col-lg-12 pt-2 pb-4">
 				<div class="display-4 mb-2 opacity-70">Step 4</div>
-				<h2 class="display-4 text-white">Verify your Claim</h2>
-				<p class="mb-4">Paste your Polkadot address to check the associated information</p>
-				<input class="h3 border-0 border-radius-2 text-dark p-2" onchange="globalThis.infoBoxChecker();"
-					onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" id="address-input">
+				<h2 class="display-4 text-white mb-5">Verify your Claim</h2>
+				<!-- <p class="mb-4">Paste your Polkadot address <br>to check the associated information</p> -->
+				<input class="dashboard-input mb-5" onchange="globalThis.infoBoxChecker();" onkeyup="this.onchange();"
+					onpaste="this.onchange();" oninput="this.onchange();" id="address-input"
+					placeholder="Paste your Polkadot address" />
 				<p>
 					Polkadot address: <span id="pd-address">None</span><br>
 					Public key: <span id="pubkey">None</span><br>

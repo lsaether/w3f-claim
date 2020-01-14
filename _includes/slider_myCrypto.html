@@ -13,11 +13,8 @@
 						</p>
 					</div>
 					<div class="col-12 col-md-7">
-						<img 
-							class="tns-lazy-img shadow-none"
-							data-src="{{site.baseurl}}/assets/images/logo-mycrypto.svg"
-							width='80%'
-						/>
+						<img class="tns-lazy-img shadow-none" data-src="{{site.baseurl}}/assets/images/logo-mycrypto.svg"
+							width='80%' />
 					</div>
 				</div>
 			</div>
@@ -91,7 +88,8 @@
 					</div>
 					<div class="col-12 col-md-6">
 						<div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
-							<p>Polkadot Claims Contract ABI: <a href="{{site.baseurl}}/assets/abi.txt">Copy the ABI from here.</a>. (Use `ctrl-a` and
+							<p>Polkadot Claims Contract ABI: <a href="{{site.baseurl}}/assets/abi.txt">Copy the ABI from here.</a>.
+								(Use `ctrl-a` and
 								`ctrl-c`).
 							</p>
 							<textarea rows="4" cols="50" id="contract-abi" class="abi-textarea"></textarea>
@@ -145,9 +143,9 @@
 						<h2 class="text-white">Get Your Public Key</h2>
 					</div>
 					<div class="col-12 col-md-12 text-center justify-content-center">
-						<p>Enter your Polkadot Address below:</p>
-						<input type='text' class="h3 border-0 border-radius-2 text-dark p-2" onchange="globalThis.getPubkey(); "
-							onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" id="dot-addr-inp" />
+						<input type='text' class="dashboard-input mb-5" onchange="globalThis.getPubkey(); "
+							onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" id="dot-addr-inp"
+							placeholder="Enter your Polkadot Address">
 						<p id="not-pd-addr" class="red-font" />
 						<p id="decoded-pubkey">Your decoded public key will appear here.</p>
 					</div>
@@ -173,10 +171,11 @@
 						</p>
 					</div>
 					<div class="col-12 col-md-6">
-						<p>You can click on the link to view your transaction on Etherscan, when the transaction is mined to the network
+						<p>You can click on the link to view your transaction on Etherscan, when the transaction is mined to the
+							network
 							then you are finished! When the Polkadot network starts you will already have the balance of DOTs in your
 							Polkadot address.</p>
-				</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -195,7 +194,8 @@
 					</div>
 					<div class="col-12 col-md-6">
 						<p>You can enter an Ethereum address or Polkadot address in the input to get the corresponding claim
-							information. Inputting an Ethereum addres will show you the registered Polkadot address, public key, index,
+							information. Inputting an Ethereum addres will show you the registered Polkadot address, public key,
+							index,
 							and balance of your claim. If all of this data looks right then your claim was a success! After Polkadot
 							launches, the DOTs will be available automatically in your Polkadot address for you to use.
 						</p>
