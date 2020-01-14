@@ -17,13 +17,20 @@ layout: default
 	</div>
 </section>
 
-<section class="bg-white">
+<section class="bg-white pt-5">
 	<div class="container">
 		{%- include process-overview.html -%}
+		<div class="row mt-5">
+			<div class="col-12 col-md-6">
+				<p class="text-secondary">
+					Completing the transaction that underlies the claim will cost a small amount of ether, less than $1's worth.
+				</p>
+			</div>
+		</div>
 	</div>
 </section>
 
-<section id="verify-etherum-address" class="bg-dark">
+<section id="verify-ethereum-address" class="bg-dark">
 	<div class="container height-40">
 		<div class="row justify-content-center">
 			<div class="col-md-12 col-lg-12 pt-2 pb-4">
@@ -32,11 +39,17 @@ layout: default
 				<p class="mb-4 text-white">Paste an Ethereum address to check the associated information</p>
 				<input class="h3 border-0 border-radius-2 text-dark p-2">
 				<p class="text-white">
-					Ethereum address: <span id="eth-pd-address">None</span><br>
-					Public key: <span id="eth-pubkey">None</span><br>
-					Index: <span id="eth-index">0</span><br>
-					Balance: <span id="eth-balance">0</span> ETH<br>
-					Vesting: <span id='eth-vesting'>None</span>
+					Ethereum address:
+					<span id="eth-pd-address">None</span><br>
+					Public key:
+					<span id="eth-pubkey">None</span><br>
+					Index:
+					<span id="eth-index">0</span><br>
+					Balance:
+					<span id="eth-balance">0</span>
+					ETH<br>
+					Vesting:
+					<span id='eth-vesting'>None</span>
 				</p>
 			</div>
 		</div>
