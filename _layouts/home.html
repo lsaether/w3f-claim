@@ -27,16 +27,14 @@ layout: default
 						<h6>Generate a Native Polkadot Address</h6>
 						<div class="mt-5 pt-2">
 							<a href="#wallet-create" class="btn btn-primary btn-bg-dark mr-1 mb-2 shadow jsSliderGoTo"
-								data-slider="1">ParitySigner</a>
+								data-slider="1">Polkadot{.js} Browser Plugin</a>
 							<a href="#wallet-create" class="btn btn-primary btn-bg-dark mr-1 mb-2 shadow jsSliderGoTo"
-								data-slider="2">Polkadot{.js}
-								Browser Plugin</a>
+								data-slider="2">Subkey</a>
 							<a href="#wallet-create" class="btn btn-primary btn-bg-dark mr-1 mb-2 shadow jsSliderGoTo"
-								data-slider="3">Subkey</a>
+								data-slider="3">polkadot.js</a>
 							<a href="#wallet-create" class="btn btn-primary btn-bg-dark mr-1 mb-2 shadow jsSliderGoTo"
-								data-slider="4">polkadot.js</a>
-							<a href="#wallet-create" class="btn btn-primary btn-bg-dark mr-1 mb-2 shadow jsSliderGoTo"
-								data-slider="5">Coinbase</a>
+								data-slider="4">Coinbase</a>
+							<button class="btn mr-1 mb-2 shadow" disabled>Parity Signer</button>
 						</div>
 					</div>
 				</div>
@@ -77,24 +75,19 @@ layout: default
 
 <section class="bg-dark pt-md-0 pb-5">
 	<div class="container pb-2">
-		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 jsSliderGoTo jsActive active" data-slider="1">Parity
-			Signer</button>
-		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 jsSliderGoTo jsActive" data-slider="2">Polkadot{.js}
+		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 jsSliderGoTo jsActive active"
+			data-slider="1">Polkadot{.js}
 			Browser
 			Plugin</button>
-		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 jsSliderGoTo jsActive" data-slider="3">Subkey</button>
+		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 jsSliderGoTo jsActive" data-slider="2">Subkey</button>
 		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 jsSliderGoTo jsActive"
-			data-slider="4">polkadot.js</button>
+			data-slider="3">polkadot.js</button>
 		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 jsSliderGoTo jsActive"
-			data-slider="5">Coinbase</button>
+			data-slider="4">Coinbase</button>
+		<button class="btn mt-lg-minus-3 mr-2" disabled>Parity Signer</button>
 	</div>
 	<div class="pb-2">
 		<div class="slider text-white pt-5 pb-0">
-			<div>
-				<div class="container">
-					{%- include slider_parity_signer.html -%}
-				</div>
-			</div>
 			<div>
 				<div class="container">
 					{%- include slider_polkadot_js_plugin.html -%}

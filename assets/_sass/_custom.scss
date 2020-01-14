@@ -62,6 +62,13 @@
 	}
 }
 
+.btn.disabled,
+.btn:disabled {
+	background: $secondary-lighter;
+	color: white;
+	opacity: 1;
+}
+
 p a {
 	overflow-wrap: break-word;
 	word-break: break-word;
