@@ -37,9 +37,9 @@
 
 						</p>
 						<p>
-							Ensure that you download the official program from MyCrypto's website. You can always find the most
+							Ensure that you download the official program from MyCrpyto official sources. You can always find the most
 							up-to-date releases of the desktop app on their <a
-								href="https://github.com/MyCryptoHQ/MyCrypto/releases">releases page</a>.
+								href="https://github.com/MyCryptoHQ/MyCrypto/releases">releases page</a>. Choose the one that matches your operating system architecture.
 						</p>
 					</div>
 				</div>
@@ -61,13 +61,14 @@
 					</div>
 					<div class="col-12 col-md-12">
 						<p>
-							Once the MyCrypto application is installed, open it and navigate to the "Interact with Contracts" in the
-							Tools section.
+							Once the MyCrypto application is installed, open it and navigate to the Contracts tab. If you're using the locally downloaded app
+							this will appear as a sidebar on your application screen. If you're using the browser the tab is found
+							by clicking "Interact with Contracts" in the Tools section dropdown.
 						</p>
 						<p>
 							In the selector, choose the Custom option for the contract options and copy the address and ABI of the
 							Claims contract. The next slide will display this information for you. If you want to verify it yourself
-							you can check it or <a href="">Etherscan verified contracts</a>.
+							you can view it on <a href="">Etherscan verified contracts</a>.
 					</div>
 				</div>
 			</div>
@@ -88,15 +89,15 @@
 					</div>
 					<div class="col-12 col-md-6">
 						<div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
-							<p>Polkadot Claims Contract ABI: <a href="{{site.baseurl}}/assets/abi.txt">Copy the ABI from here.</a>.
-								(Use `ctrl-a` and
-								`ctrl-c`).
+							<p>Copy the ABI from the text area below. Use <code>ctrl-a</code> to select-all and
+								<code>ctrl-c</code> to copy. It's also available <a href="{{site.baseurl}}/assets/abi.txt">here</a>.
 							</p>
 							<textarea rows="4" cols="50" id="contract-abi" class="abi-textarea"></textarea>
 						</div>
 					</div>
 					<div class="col-12 col-md-6">
-						<p>Polkadot Claims Contract Address: <span id="claims-address">0x</span></p>
+						<p>Polkadot Claims Contract Address: <code id="claims-address">0x</code></p><br>
+						<p>After putting this information into the blank inputs, click the "Access" button in MyCrypto to continue!</p>
 					</div>
 				</div>
 			</div>
@@ -146,8 +147,7 @@
 						<input type='text' class="dashboard-input mb-5" onchange="globalThis.getPubkey(); "
 							onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" id="dot-addr-inp"
 							placeholder="Enter your Polkadot Address">
-						<p id="not-pd-addr" class="red-font" />
-						<p id="decoded-pubkey">Your decoded public key will appear here.</p>
+						<code id="decoded-pubkey">Your decoded public key will appear here.</code>
 					</div>
 				</div>
 			</div>
@@ -162,19 +162,26 @@
 						<h2 class="text-white">Sending the Transaction</h2>
 					</div>
 					<div class="col-12 col-md-6">
-						<p>Uncheck the box that says Automatically Calculate Gas Limit and instead use 150000 as the inputted gas
-							limit. Feel free to change the gas price to whatever you like or keep it at the default, you can view the
-							network average gas price here.
+						<p>
+							First unlock your account by selecting the option that matches with the way that you've stored your Ethereum
+							private key. After you've unlocked your account you can continue with the instruction below.
 						</p>
-						<p>Click Write in MyCrypto and unlock your wallet using your preferred method. Afterward click "Sign
-							Transaction" and finally send it to the network.
+						<p>
+							Uncheck the box that says Automatically Calculate Gas Limit and instead use <code>150000</code> as the gas
+							limit. You can make changes to the gas price or simply keep it at the default. The network gas price is available at
+							<a href="https://www.ethgasstation.info/">ETH Gas Station</a>.
 						</p>
+
 					</div>
 					<div class="col-12 col-md-6">
-						<p>You can click on the link to view your transaction on Etherscan, when the transaction is mined to the
-							network
-							then you are finished! When the Polkadot network starts you will already have the balance of DOTs in your
-							Polkadot address.</p>
+						<p>
+							Click the "Write" button in MyCrypto and unlock your wallet using the method for your preferred key storage method. After
+							unlocking your account  click "Sign Transaction" and in order to send it to the network.
+						</p>
+						<p>
+							MyCrypto will display a link leading you to a popular block explorer in order to verify your transaction was mined on the network.
+							Once you see it go through you can safely close MyCrypto.
+						</p>
 					</div>
 				</div>
 			</div>
@@ -189,15 +196,16 @@
 						<h2 class="text-white">Verifying your Claim</h2>
 					</div>
 					<div class="col-12 col-md-6">
-						<p>The DOTs will not be available to you until Polkadot launches. If you would like to verify your claim,
-							the best place to do it is on the info box at the input panel below. </p>
+						<p>
+							The DOTs are not available to you until Polkadot launches. However, if you would like to verify your claim you can do so below.
+						</p>
 					</div>
 					<div class="col-12 col-md-6">
-						<p>You can enter an Ethereum address or Polkadot address in the input to get the corresponding claim
-							information. Inputting an Ethereum addres will show you the registered Polkadot address, public key,
-							index,
-							and balance of your claim. If all of this data looks right then your claim was a success! After Polkadot
-							launches, the DOTs will be available automatically in your Polkadot address for you to use.
+						<p>
+							Enter an Ethereum address, Polkadot address, or Polkadot public key in the input to get the corresponding claim
+							information. Inputting an address will show you the registered Polkadot address, public key,
+							index, and balance of your claim. If all of this data looks right then your claim was a success! When Polkadot
+							launches, the DOTs will be available automatically in your Polkadot address immediately from genesis.
 						</p>
 					</div>
 				</div>

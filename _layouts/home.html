@@ -36,19 +36,10 @@ layout: default
 			<div class="col-md-12 col-lg-12 pt-2 pb-4">
 				<div class="display-4 mb-2 opacity-70 text-white">Step 1</div>
 				<h2 class="display-4 text-white mb-5">Verify your Ethereum <br>address</h2>
-				<input class="dashboard-input mb-5" placeholder="Paste an Ethereum address to check the associated information">
+				<input class="dashboard-input mb-5" placeholder="Paste an Ethereum address to check the associated information" onchange="globalThis.validAddress();" onkeyup="this.onchange();"
+				onpaste="this.onchange();" oninput="this.onchange();" id="validity-input">
 				<p class="text-white">
-					Ethereum address:
-					<span id="eth-pd-address">None</span><br>
-					Public key:
-					<span id="eth-pubkey">None</span><br>
-					Index:
-					<span id="eth-index">0</span><br>
-					Balance:
-					<span id="eth-balance">0</span>
-					ETH<br>
-					Vesting:
-					<span id='eth-vesting'>None</span>
+					<span id='validity-statement'>We will tell you here if the address has a valid claim!</span>
 				</p>
 			</div>
 		</div>
@@ -154,9 +145,10 @@ layout: default
 					onpaste="this.onchange();" oninput="this.onchange();" id="address-input"
 					placeholder="Paste your Polkadot address" />
 				<p>
+					Allocation address: <span id="eth-address">Unknown</span><br>
 					Polkadot address: <span id="pd-address">None</span><br>
 					Public key: <span id="pubkey">None</span><br>
-					Index: <span id="index">0</span><br>
+					Index: <span id="index">None</span><br>
 					Balance: <span id="balance">0</span> DOT<br>
 					Vesting: <span id='vesting'>None</span>
 				</p>
