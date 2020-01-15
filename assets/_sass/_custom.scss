@@ -61,10 +61,13 @@
 		background: $primary !important;
 		color: white;
 		will-change: transform;
-		transform: scale(1.05);
 		border: solid 1px transparent !important;
 		box-shadow: none !important;
 		outline: 0 !important;
+	}
+
+	&:hover {
+		transform: scale(1.05);
 	}
 }
 
@@ -125,8 +128,10 @@ a {
 	border-radius: 2rem;
 }
 
-.red-font {
-	color: red;
+.mt-md-minus-3 {
+	@media only screen and (min-width: 768px) {
+		margin-top: -1.5rem;
+	}
 }
 
 code {
@@ -168,6 +173,19 @@ code {
 
 .process-overview-timeline {
 	position: relative;
+	justify-content: space-between !important;
+
+	& > div:nth-child(2) {
+		@media only screen and (min-width: 1200px) {
+			flex: 0 0 41.66667%;
+			max-width: 41.66667%;
+		}
+	}
+
+	&:after,
+	&:before {
+		content: none;
+	}
 
 	&:after {
 		@extend .bg-primary;

@@ -1,10 +1,5 @@
 .slider {
 	padding-top: 6rem;
-
-	@media (max-width: 767px) {
-		padding-bottom: 8rem;
-	}
-
 	height: 30vh;
 	visibility: hidden;
 }
@@ -35,8 +30,7 @@
 	z-index: 1000;
 
 	@media (max-width: 767px) {
-		top: auto;
-		bottom: -8rem;
+		right: 0;
 	}
 
 	& > button {
@@ -73,11 +67,6 @@
 	display: inline-block;
 	top: -4.2rem;
 	left: 0;
-
-	@media (max-width: 767px) {
-		top: auto;
-		bottom: -4.9rem;
-	}
 
 	button {
 		border: none;
@@ -129,6 +118,10 @@
 
 .slider-img {
 	position: relative;
+
+	@media (max-width: 767px) {
+		margin: 2rem;
+	}
 
 	img {
 		box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.5);
@@ -357,12 +350,20 @@
 
 #s2_1,
 #s4_0 {
+	@media (min-width: 768px) {
+		margin-top: -3rem;
+	}
+
 	img {
-		max-width: 260px;
+		max-width: 200px;
 	}
 }
 
 #s5_1 {
+	@media (min-width: 768px) {
+		margin-top: -3rem;
+	}
+
 	img {
 		max-width: 260px;
 	}
