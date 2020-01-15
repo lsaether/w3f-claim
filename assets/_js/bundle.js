@@ -37,10 +37,11 @@ let sliderInnerPolkadotJsPlugin = tns({
 	controls: true,
 	nav: true,
 	navPosition: 'bottom',
-	controlsPosition: 'bottom',
+	controlsPosition: 'top',
 	autoplay: false,
 	loop: false,
-	lazyload: true
+	lazyload: true,
+	autoHeight: false
 });
 
 let sliderInnerPolkadotJs = tns({
@@ -56,7 +57,8 @@ let sliderInnerPolkadotJs = tns({
 	controlsPosition: 'bottom',
 	autoplay: false,
 	loop: false,
-	lazyload: true
+	lazyload: true,
+	autoHeight: false
 });
 
 const slider = tns({
@@ -70,7 +72,8 @@ const slider = tns({
 	nav: false,
 	loop: false,
 	speed: 600,
-	lazyload: true
+	lazyload: true,
+	autoHeight: false
 });
 
 (function($) {
@@ -106,7 +109,7 @@ let sliderInnerA = tns({
 });
 
 const sliderA = tns({
-	container: '.slider',
+	container: '.sliderA',
 	mode: 'carousel',
 	nested: 'outer',
 	items: 1,

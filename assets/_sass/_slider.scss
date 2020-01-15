@@ -1,6 +1,15 @@
+.slider {
+	padding-top: 6rem;
+
+	@media (max-width: 767px) {
+		padding-bottom: 8rem;
+	}
+}
+
 .slider-step {
 	position: absolute;
 	top: -1.5rem;
+	display: none;
 }
 
 .tns-outer {
@@ -8,10 +17,19 @@
 }
 
 .tns-controls {
-	display: flex;
-	justify-content: space-between;
 	outline: 0 !important;
 	padding-bottom: 0.2rem;
+	padding-bottom: 2rem;
+	text-align: right;
+	position: absolute;
+	top: -4.7rem;
+	right: -1rem;
+	z-index: 1000;
+
+	@media (max-width: 767px) {
+		top: auto;
+		bottom: -8rem;
+	}
 
 	& > button {
 		border-radius: 50%;
@@ -19,16 +37,16 @@
 		height: 3rem;
 		text-indent: -99999px;
 		border: none;
-		background: no-repeat center center #42484d;
+		background: no-repeat center center transparent;
 		transition: all 0.2s ease-in-out, background-color 0.1s ease-in-out;
 
-		&:hover {
-			background-color: $primary;
+		&:not([disabled]):hover {
+			background-color: #42484d;
 			transform: scale(1.05);
 		}
 
 		&[disabled] {
-			opacity: 0;
+			opacity: 0.1;
 		}
 	}
 
@@ -38,23 +56,58 @@
 
 	button[data-controls="next"] {
 		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath fill='%23fff' d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z'/%3E%3C/svg%3E%0A");
+		margin-left: 0.5rem;
 	}
 }
 
 .tns-nav {
 	position: absolute;
 	display: inline-block;
-	transform: translate(-50%, -50%);
-	left: 50%;
-	bottom: 0.65rem;
+	top: -4.2rem;
+	left: 0;
+
+	@media (max-width: 767px) {
+		top: auto;
+		bottom: -4.9rem;
+	}
 
 	button {
 		border: none;
-		background: #42484d;
-		padding: 2px 15px 2px;
+		background: none;
+		position: relative;
+		padding: 5px;
+
+		&:after {
+			content: "";
+			width: 4px;
+			height: 4px;
+			border-radius: 50%;
+			position: absolute;
+			left: 2px;
+			top: 2px;
+			background: #42484d;
+			opacity: 0.4;
+			transform: scale(1);
+			transition: all 0.2s ease-in-out;
+		}
+
+		&:hover {
+			&:after {
+				transform: scale(1.4);
+			}
+		}
 
 		&.tns-nav-active {
-			background: #b7b8bb;
+			&:after {
+				background: white;
+				opacity: 1;
+				transform: scale(1.4);
+			}
+		}
+
+		&:active,
+		&:focus {
+			outline: 0;
 		}
 	}
 }
