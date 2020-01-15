@@ -49,9 +49,15 @@
 		display: none;
 	}
 
+	&:focus {
+		background: $secondary !important;
+		transform: scale(0.999);
+		border: solid 1px transparent !important;
+	}
+
 	&:hover,
-	&:focus,
-	&.active {
+	&.active,
+	&:active {
 		background: $primary !important;
 		color: white;
 		will-change: transform;
@@ -102,4 +108,32 @@ code {
 
 .abi-textarea {
 	color: black;
+}
+
+.card.jsGoToAnchor,
+.card.link {
+	transition: all 0.12s ease-in-out;
+	cursor: pointer;
+
+	&:after {
+		font-family: "Material Icons";
+		content: "arrow_downward";
+		-webkit-font-feature-settings: "liga";
+		position: absolute;
+		transform: translate(-50%, 0);
+		left: 50%;
+		bottom: 0.1rem;
+		color: $primary;
+		opacity: 0;
+		transition: all 0.2s ease-in-out;
+	}
+
+	&:hover {
+		box-shadow: 0 0.2rem 0.6rem rgba(52, 58, 64, 0.15) !important;
+
+		&:after {
+			bottom: 0.8rem;
+			opacity: 1;
+		}
+	}
 }
