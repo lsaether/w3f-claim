@@ -129,11 +129,49 @@ code {
 	}
 
 	&:hover {
-		box-shadow: 0 0.2rem 0.6rem rgba(52, 58, 64, 0.15) !important;
+		box-shadow: 0 0.2rem 0.4rem rgba(52, 58, 64, 0.15) !important;
 
 		&:after {
 			bottom: 0.8rem;
 			opacity: 1;
 		}
 	}
+}
+
+.process-overview-timeline {
+	position: relative;
+
+	&:after {
+		@extend .bg-primary;
+
+		content: "";
+		position: absolute;
+		transform: translate(-50%, -50%);
+		width: 76%;
+		height: 2px;
+		top: 47%;
+		left: 50%;
+		z-index: 0;
+		visibility: hidden;
+
+		@media (max-width: 767px) {
+			width: 2px;
+			height: 76%;
+			visibility: visible;
+		}
+
+		@media (min-width: 992px) {
+			visibility: visible;
+		}
+	}
+
+	.card {
+		background: white;
+		position: relative;
+		z-index: 1;
+	}
+}
+
+.process-overview-step {
+	min-height: 8rem;
 }
