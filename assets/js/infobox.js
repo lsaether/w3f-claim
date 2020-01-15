@@ -190,7 +190,7 @@ const getPolkadotData = async (pubkey, claims, frozenToken) => {
   return getEthereumData(claimsForPubkey, claims, frozenToken);
 }
 
-globalThis.infoBoxChecker = check;
-globalThis.validAddress = validAddress;
+window.infoBoxChecker = check;
+window.validAddress = validAddress;
 
 // npx browserify infobox.js > infobox-browser.js; npx uglify-es --mangle --compress -- infobox-browser.js > infobox.min.js; rm infobox-browser.js
