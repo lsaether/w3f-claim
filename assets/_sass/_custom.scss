@@ -75,11 +75,39 @@
 	opacity: 1;
 }
 
-p a {
+p a,
+ol a,
+a.underline {
 	overflow-wrap: break-word;
 	word-break: break-word;
 	hyphens: auto;
-	color: $primary !important;
+	color: black !important;
+	display: inline-block;
+
+	.bg-dark & {
+		color: $primary !important;
+	}
+
+	&:after {
+		content: "";
+		width: 100%;
+		height: 1px;
+		display: block;
+		background: $primary;
+		transition: 100ms;
+		will-change: transform;
+	}
+
+	&:hover {
+		&:after {
+			transform: translate(0, 1px);
+		}
+	}
+
+	&:focus {
+		color: $primary;
+		text-decoration: none;
+	}
 }
 
 a {
