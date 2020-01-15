@@ -150,14 +150,39 @@ layout: default
 					onpaste="this.onchange();" oninput="this.onchange();" id="address-input"
 					placeholder="Paste your Polkadot address" onfocus="this.placeholder=''"
 					onblur="this.placeholder='Paste your Polkadot address'" />
-				<p>
-					Allocation address: <span id="eth-address">Unknown</span><br>
-					Polkadot address: <span id="pd-address">None</span><br>
-					Public key: <span id="pubkey">None</span><br>
-					Index: <span id="index">None</span><br>
-					Balance: <span id="balance">0</span> DOT<br>
-					Vesting: <span id='vesting'>None</span>
-				</p>
+				<div class="dashboard-output">
+
+					<div class="dashboard-output-group">
+						<div class="dashboard-output-name">Allocation address</div>
+						<div class="dashboard-output-value"><span id="eth-address">Unknown</span></div>
+					</div>
+
+					<div class="dashboard-output-group">
+						<div class="dashboard-output-name">Polkadot address</div>
+						<div class="dashboard-output-value"><span id="pd-address">None</span></div>
+					</div>
+
+					<div class="dashboard-output-group">
+						<div class="dashboard-output-name">Public key</div>
+						<div class="dashboard-output-value"><span id="pubkey">None</span></div>
+					</div>
+
+					<div class="dashboard-output-group">
+						<div class="dashboard-output-name">Index</div>
+						<div class="dashboard-output-value"><span id="index">None</span></div>
+					</div>
+
+					<div class="dashboard-output-group">
+						<div class="dashboard-output-name">Vesting</div>
+						<div class="dashboard-output-value"><span id='vesting'>None</span></div>
+					</div>
+
+					<div class="dashboard-output-group">
+						<div class="dashboard-output-name">Balance</div>
+						<div class="dashboard-output-value"><span id="balance">0</span> DOT</div>
+					</div>
+
+				</div>
 			</div>
 		</div>
 	</div>

@@ -9,7 +9,7 @@
 	line-height: 4rem;
 
 	@media (max-width: 767px) {
-		padding: 0.5rem 1rem 0.7rem 1rem;
+		padding: 1rem 2rem 1.3rem 2rem;
 		font-size: 1rem;
 		line-height: 2rem;
 	}
@@ -57,5 +57,44 @@
 			transform: scale(1);
 			opacity: 1;
 		}
+	}
+}
+
+.dashboard-output {
+	div {
+		span {
+		}
+	}
+}
+
+.dashboard-output-group {
+	margin-bottom: 4px;
+}
+
+.dashboard-output-name {
+	display: inline-block;
+	color: white;
+	padding: 4px;
+
+	&:after {
+		content: "";
+		width: 100%;
+		height: 1px;
+		display: block;
+		background: white;
+	}
+}
+
+.dashboard-output-value {
+	display: inline-block;
+	padding: 4px;
+	border-radius: 8px;
+
+	@media (max-width: 767px) {
+		display: block;
+		padding: 0;
+		overflow-wrap: break-word;
+		word-break: break-word;
+		margin-bottom: 1rem;
 	}
 }
