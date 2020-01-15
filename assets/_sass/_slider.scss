@@ -4,6 +4,14 @@
 	@media (max-width: 767px) {
 		padding-bottom: 8rem;
 	}
+
+	height: 30vh;
+	visibility: hidden;
+}
+
+.tns-outer .slider {
+	visibility: visible;
+	height: auto;
 }
 
 .slider-step {
@@ -331,6 +339,8 @@
 	&#s4_5:after {
 		top: 43.9%;
 	}
+
+	// coinbase
 }
 
 #s1_4 {
@@ -347,6 +357,12 @@
 
 #s2_1,
 #s4_0 {
+	img {
+		max-width: 260px;
+	}
+}
+
+#s5_1 {
 	img {
 		max-width: 260px;
 	}
