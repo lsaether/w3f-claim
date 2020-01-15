@@ -39,7 +39,8 @@
 						<p>
 							Ensure that you download the official program from MyCrpyto official sources. You can always find the most
 							up-to-date releases of the desktop app on their <a
-								href="https://github.com/MyCryptoHQ/MyCrypto/releases">releases page</a>. Choose the one that matches your operating system architecture.
+								href="https://github.com/MyCryptoHQ/MyCrypto/releases">releases page</a>. Choose the one that matches
+							your operating system architecture.
 						</p>
 					</div>
 				</div>
@@ -61,7 +62,8 @@
 					</div>
 					<div class="col-12 col-md-12">
 						<p>
-							Once the MyCrypto application is installed, open it and navigate to the Contracts tab. If you're using the locally downloaded app
+							Once the MyCrypto application is installed, open it and navigate to the Contracts tab. If you're using the
+							locally downloaded app
 							this will appear as a sidebar on your application screen. If you're using the browser the tab is found
 							by clicking "Interact with Contracts" in the Tools section dropdown.
 						</p>
@@ -97,7 +99,8 @@
 					</div>
 					<div class="col-12 col-md-6">
 						<p>Polkadot Claims Contract Address: <code id="claims-address">0x</code></p><br>
-						<p>After putting this information into the blank inputs, click the "Access" button in MyCrypto to continue!</p>
+						<p>After putting this information into the blank inputs, click the "Access" button in MyCrypto to continue!
+						</p>
 					</div>
 				</div>
 			</div>
@@ -146,7 +149,8 @@
 					<div class="col-12 col-md-12 text-center justify-content-center">
 						<input type='text' class="dashboard-input mb-5" onchange="globalThis.getPubkey(); "
 							onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" id="dot-addr-inp"
-							placeholder="Enter your Polkadot Address">
+							placeholder="Enter your Polkadot Address" onfocus="this.placeholder=''"
+							onblur="this.placeholder='Enter your Polkadot Address'">
 						<code id="decoded-pubkey">Your decoded public key will appear here.</code>
 					</div>
 				</div>
@@ -163,23 +167,27 @@
 					</div>
 					<div class="col-12 col-md-6">
 						<p>
-							First unlock your account by selecting the option that matches with the way that you've stored your Ethereum
+							First unlock your account by selecting the option that matches with the way that you've stored your
+							Ethereum
 							private key. After you've unlocked your account you can continue with the instruction below.
 						</p>
 						<p>
 							Uncheck the box that says Automatically Calculate Gas Limit and instead use <code>150000</code> as the gas
-							limit. You can make changes to the gas price or simply keep it at the default. The network gas price is available at
+							limit. You can make changes to the gas price or simply keep it at the default. The network gas price is
+							available at
 							<a href="https://www.ethgasstation.info/">ETH Gas Station</a>.
 						</p>
 
 					</div>
 					<div class="col-12 col-md-6">
 						<p>
-							Click the "Write" button in MyCrypto and unlock your wallet using the method for your preferred key storage method. After
-							unlocking your account  click "Sign Transaction" and in order to send it to the network.
+							Click the "Write" button in MyCrypto and unlock your wallet using the method for your preferred key
+							storage method. After
+							unlocking your account click "Sign Transaction" and in order to send it to the network.
 						</p>
 						<p>
-							MyCrypto will display a link leading you to a popular block explorer in order to verify your transaction was mined on the network.
+							MyCrypto will display a link leading you to a popular block explorer in order to verify your transaction
+							was mined on the network.
 							Once you see it go through you can safely close MyCrypto.
 						</p>
 					</div>
@@ -197,14 +205,17 @@
 					</div>
 					<div class="col-12 col-md-6">
 						<p>
-							The DOTs are not available to you until Polkadot launches. However, if you would like to verify your claim you can do so below.
+							The DOTs are not available to you until Polkadot launches. However, if you would like to verify your claim
+							you can do so below.
 						</p>
 					</div>
 					<div class="col-12 col-md-6">
 						<p>
-							Enter an Ethereum address, Polkadot address, or Polkadot public key in the input to get the corresponding claim
+							Enter an Ethereum address, Polkadot address, or Polkadot public key in the input to get the corresponding
+							claim
 							information. Inputting an address will show you the registered Polkadot address, public key,
-							index, and balance of your claim. If all of this data looks right then your claim was a success! When Polkadot
+							index, and balance of your claim. If all of this data looks right then your claim was a success! When
+							Polkadot
 							launches, the DOTs will be available automatically in your Polkadot address immediately from genesis.
 						</p>
 					</div>

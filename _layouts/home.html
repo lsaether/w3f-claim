@@ -36,8 +36,9 @@ layout: default
 			<div class="col-md-12 col-lg-12 pt-2 pb-4">
 				<div class="display-4 mb-2 opacity-70 text-white">Step 1</div>
 				<h2 class="display-4 text-white mb-5">Verify your Ethereum <br>address</h2>
-				<input class="dashboard-input mb-5" placeholder="Paste an Ethereum address to check the associated information" onchange="globalThis.validAddress();" onkeyup="this.onchange();"
-				onpaste="this.onchange();" oninput="this.onchange();" id="validity-input">
+				<input class="dashboard-input mb-5" placeholder="Paste an Ethereum address" onfocus="this.placeholder=''"
+					onblur="this.placeholder='Paste an Ethereum address'" onchange="globalThis.validAddress();"
+					onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" id="validity-input">
 				<p class="text-white">
 					<span id='validity-statement'>We will tell you here if the address has a valid claim!</span>
 				</p>
@@ -140,10 +141,10 @@ layout: default
 			<div class="col-md-12 col-lg-12 pt-2 pb-4">
 				<div class="display-4 mb-2 opacity-70">Step 4</div>
 				<h2 class="display-4 text-white mb-5">Verify your Claim</h2>
-				<!-- <p class="mb-4">Paste your Polkadot address <br>to check the associated information</p> -->
 				<input class="dashboard-input mb-5" onchange="globalThis.infoBoxChecker();" onkeyup="this.onchange();"
 					onpaste="this.onchange();" oninput="this.onchange();" id="address-input"
-					placeholder="Paste your Polkadot address" />
+					placeholder="Paste your Polkadot address" onfocus="this.placeholder=''"
+					onblur="this.placeholder='Paste your Polkadot address'" />
 				<p>
 					Allocation address: <span id="eth-address">Unknown</span><br>
 					Polkadot address: <span id="pd-address">None</span><br>
