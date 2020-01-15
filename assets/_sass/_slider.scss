@@ -94,6 +94,8 @@
 		&:hover {
 			&:after {
 				transform: scale(1.4);
+				background: white;
+				opacity: 1;
 			}
 		}
 
