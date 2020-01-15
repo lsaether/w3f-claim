@@ -69,7 +69,8 @@ const slider = tns({
 	controls: false,
 	nav: false,
 	loop: false,
-	speed: 600
+	speed: 600,
+	lazyload: true
 });
 
 (function($) {
