@@ -20,9 +20,9 @@ layout: default
 <section class="bg-white pt-5">
 	<div class="container">
 		{%- include process-overview.html -%}
-		<div class="row mt-5">
+		<div class="row mt-4">
 			<div class="col-12 col-md-6">
-				<p class="text-secondary">
+				<p class="text-secondary text-center text-md-left px-4 px-md-0">
 					Completing the transaction that underlies the claim will cost a small amount of Ether.
 				</p>
 				</iv>
@@ -35,10 +35,11 @@ layout: default
 		<div class="row justify-content-center">
 			<div class="col-md-12 col-lg-12 pt-2 pb-4">
 				<div class="display-4 mb-2 opacity-70 text-white">Step 1</div>
-				<h2 class="display-4 text-white mb-5">Check Your Ethereum <br>Address</h2>
-				<input class="dashboard-input mb-5" placeholder="Paste an Ethereum address" onfocus="this.placeholder=''"
-					onblur="this.placeholder='Paste an Ethereum address'" onchange="window.validAddress();"
-					onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" id="validity-input">
+				<h2 class="display-4 text-white mb-3 mb-md-5">Check Your Ethereum <br>Address</h2>
+				<input class="dashboard-input mb-3 mb-md-5" placeholder="Paste an Ethereum address"
+					onfocus="this.placeholder=''" onblur="this.placeholder='Paste an Ethereum address'"
+					onchange="window.validAddress();" onkeyup="this.onchange();" onpaste="this.onchange();"
+					oninput="this.onchange();" id="validity-input">
 				<p class="text-white">
 					<span id='validity-statement'>We will tell you here if the address has a valid claim!</span>
 				</p>
@@ -54,19 +55,19 @@ layout: default
 	<span id="wallet-create"></span>
 </section>
 
-<section class="bg-dark pt-md-0 pb-0">
+<section class="bg-dark pt-3 pt-md-3 pt-lg-0 pb-0">
 	<div class="container pb-0">
-		<a href="#wallet-create" class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 mb-2 jsSliderGoTo jsActive active"
+		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-1 mr-lg-2 mb-2 jsSliderGoTo jsActive active"
 			data-slider="1">Polkadot{.js}
 			Browser
-			Plugin</a>
-		<a href="#wallet-create" class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 mb-2 jsSliderGoTo jsActive"
-			data-slider="2">Subkey</a>
-		<a href="#wallet-create" class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 mb-2 jsSliderGoTo jsActive"
-			data-slider="3">polkadot.js</a>
-		<a href="#wallet-create" class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 mb-2 jsSliderGoTo jsActive"
-			data-slider="4">Coinbase</a>
-		<button class="btn mt-lg-minus-3 mr-2 mb-2" disabled>Parity Signer</button>
+			Plugin</button>
+		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-1 mr-lg-2 mb-2 jsSliderGoTo jsActive"
+			data-slider="2">Subkey</button>
+		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-1 mr-lg-2 mb-2 jsSliderGoTo jsActive"
+			data-slider="3">polkadot.js</button>
+		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-1 mr-lg-2 mb-2 jsSliderGoTo jsActive"
+			data-slider="4">Coinbase</button>
+		<button class="btn mt-lg-minus-3 mr-1 mr-lg-2 mb-2" disabled>Parity Signer</button>
 	</div>
 	<div class="pb-2">
 		<div class="slider text-white">
@@ -111,17 +112,19 @@ layout: default
 			<div class="col-12 col-md-6 col-lg-4 mb-4">
 				<p>If you don’t have a Polkadot address, you will
 					need to generate one.</p>
-				<a href="#wallet">Go to Create an Address</a>
+				<p>
+					<a href="#wallet">Go to Create an Address</a>
+				</p>
 			</div>
 		</div>
 	</div>
 	<span id="claim-process"></span>
 </section>
 
-<section class="bg-dark pt-md-0 pb-5">
-	<div class="container pb-2">
+<section class="bg-dark pt-3 pt-md-3 pt-lg-0 pb-0">
+	<div class="container pb-0">
 		<a href="#claim-process"
-			class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-2 mb-2 jsSliderGoToA jsActive active">MyCrypto</a>
+			class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-1 mr-lg-2 mb-2 jsSliderGoToA jsActive active">MyCrypto</a>
 	</div>
 	<div class="pb-2">
 		<div class="slider sliderA text-white">
@@ -142,8 +145,8 @@ layout: default
 		<div class="row justify-content-center">
 			<div class="col-md-12 col-lg-12 pt-2 pb-4">
 				<div class="display-4 mb-2 opacity-70">Step 4</div>
-				<h2 class="display-4 text-white mb-5">Verify Your Claim</h2>
-				<input class="dashboard-input mb-5" onchange="window.infoBoxChecker();" onkeyup="this.onchange();"
+				<h2 class="display-4 text-white mb-3 mb-md-5">Verify Your Claim</h2>
+				<input class="dashboard-input mb-3 mb-md-5" onchange="window.infoBoxChecker();" onkeyup="this.onchange();"
 					onpaste="this.onchange();" oninput="this.onchange();" id="address-input"
 					placeholder="Paste your Polkadot address" onfocus="this.placeholder=''"
 					onblur="this.placeholder='Paste your Polkadot address'" />

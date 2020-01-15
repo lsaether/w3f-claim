@@ -8,6 +8,12 @@
 	font-size: 2rem;
 	line-height: 4rem;
 
+	@media (max-width: 767px) {
+		padding: 0.5rem 1rem 0.7rem 1rem;
+		font-size: 1rem;
+		line-height: 2rem;
+	}
+
 	border: solid 1px white;
 	transition: all 0.2s ease, border 1ms ease;
 	will-change: transform;
@@ -37,7 +43,7 @@
 		color: black;
 
 		&::placeholder {
-			color: $secondary;
+			color: black;
 			transform: scale(1);
 		}
 	}
@@ -46,5 +52,10 @@
 		color: white;
 		transform: scale(0.5);
 		transform-origin: 0% 50%;
+
+		@media (max-width: 767px) {
+			transform: scale(1);
+			opacity: 1;
+		}
 	}
 }

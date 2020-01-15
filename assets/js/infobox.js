@@ -5,20 +5,23 @@ const Web3 = require('web3');
 const ClaimsArtifact = require('../contracts/Claims.json');
 const FrozenTokenArtifact = require('../contracts/FrozenToken.json');
 
-const GOERLI_CLAIMS_ADDRESS = '0x46f8131Dd26E59F1f81299A8702B7cA3bD2B2535';
-const GOERLI_FROZENTOKEN_ADDRESS = '0xe4915b22A00f293ed49AeA9aD97738dE8BfB3949';
+// const GOERLI_CLAIMS_ADDRESS = '0x46f8131Dd26E59F1f81299A8702B7cA3bD2B2535';
+// const GOERLI_FROZENTOKEN_ADDRESS = '0xe4915b22A00f293ed49AeA9aD97738dE8BfB3949';
+
+const CLAIMS_ADDRESS = '0xa2CBa0190290aF37b7e154AEdB06d16100Ff5907';
+const FROZENTOKEN_ADDRESS = '0xb59f67A8BfF5d8Cd03f6AC17265c550Ed8F33907';
 
 console.log('contracts instantiated');
 
-const w3 = new Web3(new Web3.providers.HttpProvider("https://goerli.prylabs.net"));
+const w3 = new Web3(new Web3.providers.WebsocketProvider("wss://mainnet.infura.io/ws/v3/d2e0f554436c4ec595954c34d9fecdb7"));
 w3.eth.getBlockNumber().then((Res) => {
     console.log(Res);
 });
 
-const frozenToken = new w3.eth.Contract(FrozenTokenArtifact.abi, GOERLI_FROZENTOKEN_ADDRESS);
-const claims = new w3.eth.Contract(ClaimsArtifact.abi, GOERLI_CLAIMS_ADDRESS);
+const frozenToken = new w3.eth.Contract(FrozenTokenArtifact.abi, FROZENTOKEN_ADDRESS);
+const claims = new w3.eth.Contract(ClaimsArtifact.abi, CLAIMS_ADDRESS);
 
-document.getElementById('claims-address').innerHTML = GOERLI_CLAIMS_ADDRESS;
+document.getElementById('claims-address').innerHTML = CLAIMS_ADDRESS;
 document.getElementById('contract-abi').innerHTML = JSON.stringify(ClaimsArtifact.abi);
 
 const validAddress = async () => {
@@ -38,7 +41,7 @@ const validAddress = async () => {
   };
 
   const amendedLogs = await claims.getPastEvents('Amended', {
-    fromBlock: '0',
+    fromBlock: '9200000',
     toBlock: 'latest',
     filter: {
       // original: [ethData.original],
@@ -62,7 +65,7 @@ const validAddress = async () => {
   if (Number(ethData.balance) === 0) {
     document.getElementById('validity-statement').innerHTML = "There is not a claim associated with this address. Did you use the right one?"
   } else {
-    document.getElementById('validity-statement').innerHTML = "You have a claim! Please proceed with the next step!";
+    document.getElementById('validity-statement').innerHTML = "You have a claim! Please proceed with the next step! 👍";
   }
 }
 
@@ -123,7 +126,7 @@ const getEthereumData = async (ethAddress, claims, frozenToken) => {
   };
 
   const amendedLogs = await claims.getPastEvents('Amended', {
-    fromBlock: '0',
+    fromBlock: '9200000',
     toBlock: 'latest',
     filter: {
       // original: [ethData.original],
@@ -132,7 +135,7 @@ const getEthereumData = async (ethAddress, claims, frozenToken) => {
   });
 
   if (amendedLogs && amendedLogs.length && ethData.original !== '0x00b46c2526e227482e2EbB8f4C69E4674d262E75') {
-    const [original, amendedTo] = amendedLogs[0].returnValues;
+    const { original, amendedTo } = amendedLogs[0].returnValues;
     ethData.original = original;
     ethData.amendedTo = amendedTo;
   }
@@ -150,15 +153,30 @@ const getEthereumData = async (ethAddress, claims, frozenToken) => {
   }
 
   const vestedLogs = await claims.getPastEvents('Vested', {
-    fromBlock: '0',
+    fromBlock: '9200000',
+    toBlock: 'latest',
+    filter: {
+      eth: [ethData.original],
+    }
+  });
+  // console.log('vested', vestedLogs);
+
+  if (vestedLogs && vestedLogs.length) {
+    ethData.vested = vestedLogs[0].returnValues.amount;
+    // console.log('in vested', ethData.vested);
+  }
+
+  const vestedIncreasedLogs = await claims.getPastEvents('VestedIncreased', {
+    fromBlock: '9200000',
     toBlock: 'latest',
     filter: {
       eth: [ethData.original],
     }
   });
 
-  if (vestedLogs && vestedLogs.length) {
-    ethData.vested = vestedLogs[0].returnValues.amount;
+  if (vestedIncreasedLogs && vestedIncreasedLogs.length) {
+    // console.log('vestedIncreasedLogs', vestedIncreasedLogs);
+    ethData.vested = vestedIncreasedLogs[vestedIncreasedLogs.length-1].returnValues.newTotal;
   }
 
   const claimData = await claims.methods.claims(ethData.original).call();
