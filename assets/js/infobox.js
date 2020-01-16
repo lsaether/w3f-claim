@@ -38,9 +38,25 @@ const validAddress = async () => {
 
   let ethData = {
     original: value,
+    amendedTo: null,
   };
 
-  const amendedLogs = await claims.getPastEvents('Amended', {
+  const amendedToLogs = await claims.getPastEvents('Amended', {
+    fromBlock: '9200000',
+    toBlock: 'latest',
+    filter: {
+      original: [ethData.original],
+      // amendedTo: [ethData.original],
+    },
+  });
+
+  if (amendedToLogs && amendedToLogs.length && ethData.original !== '0x00b46c2526e227482e2EbB8f4C69E4674d262E75') {
+    const {original, amendedTo} = amendedToLogs[0].returnValues;
+    ethData.original = original;
+    ethData.amendedTo = amendedTo;
+  }
+
+  const amendedForLogs = await claims.getPastEvents('Amended', {
     fromBlock: '9200000',
     toBlock: 'latest',
     filter: {
@@ -49,11 +65,12 @@ const validAddress = async () => {
     },
   });
 
-  if (amendedLogs && amendedLogs.length && ethData.original !== '0x00b46c2526e227482e2EbB8f4C69E4674d262E75') {
-    const [original, amendedTo] = amendedLogs[0].returnValues;
+  if (amendedForLogs && amendedForLogs.length && ethData.original !== '0x00b46c2526e227482e2EbB8f4C69E4674d262E75') {
+    const {original, amendedTo} = amendedForLogs[0].returnValues;
     ethData.original = original;
     ethData.amendedTo = amendedTo;
   }
+  // console.log(amendedLogs)
 
   ethData.balance = await frozenToken.methods.balanceOf(ethData.original).call();
   if (ethData.amendedTo) {
@@ -61,9 +78,10 @@ const validAddress = async () => {
     ethData.balance = Number(ethData.balance) + (await frozenToken.methods.balanceOf(ethData.amendedTo).call());
   }
 
-
-  if (Number(ethData.balance) === 0) {
+  if (Number(ethData.balance) === 0 || (ethData.amendedTo && !amendedForLogs.length)) {
     document.getElementById('validity-statement').innerHTML = "There is not a claim associated with this address. Did you use the right one?"
+  } else if (amendedForLogs.length) {
+    document.getElementById('validity-statement').innerHTML = `${ethData.original} is amended to ${ethData.amendedTo}. Only the amended address can make the claim.`;
   } else {
     document.getElementById('validity-statement').innerHTML = "You have a claim! Please proceed with the next step!";
   }
@@ -125,7 +143,33 @@ const getEthereumData = async (ethAddress, claims, frozenToken) => {
     noBalance: false,
   };
 
-  const amendedLogs = await claims.getPastEvents('Amended', {
+  const amendedToLogs = await claims.getPastEvents('Amended', {
+    fromBlock: '9200000',
+    toBlock: 'latest',
+    filter: {
+      original: [ethData.original],
+      // amendedTo: [ethData.original],
+    },
+  });
+
+  if (amendedToLogs && amendedToLogs.length && ethData.original !== '0x00b46c2526e227482e2EbB8f4C69E4674d262E75') {
+    const {original, amendedTo} = amendedToLogs[0].returnValues;
+    ethData.original = original;
+    ethData.amendedTo = amendedTo;
+  }
+
+  if (ethData.amendedTo) {
+    return {
+      original: 'None',
+      pdAddress: 'None',
+      pubkey: 'None',
+      index: 'None',
+      balance: '0',
+      vesting: null,
+    }
+  }
+
+  const amendedForLogs = await claims.getPastEvents('Amended', {
     fromBlock: '9200000',
     toBlock: 'latest',
     filter: {
@@ -134,8 +178,8 @@ const getEthereumData = async (ethAddress, claims, frozenToken) => {
     },
   });
 
-  if (amendedLogs && amendedLogs.length && ethData.original !== '0x00b46c2526e227482e2EbB8f4C69E4674d262E75') {
-    const { original, amendedTo } = amendedLogs[0].returnValues;
+  if (amendedForLogs && amendedForLogs.length && ethData.original !== '0x00b46c2526e227482e2EbB8f4C69E4674d262E75') {
+    const {original, amendedTo} = amendedForLogs[0].returnValues;
     ethData.original = original;
     ethData.amendedTo = amendedTo;
   }
