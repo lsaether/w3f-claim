@@ -38,7 +38,7 @@ layout: default
 				<h2 class="display-4 text-white mb-3 mb-md-5">Check Your Ethereum <br>Address</h2>
 				<input class="dashboard-input mb-3 mb-md-5" placeholder="Paste an Ethereum address"
 					onfocus="this.placeholder=''" onblur="this.placeholder='Paste an Ethereum address'"
-					onchange="globalThis.validAddress();" onkeyup="this.onchange();" onpaste="this.onchange();"
+					onchange="window.validAddress();" onkeyup="this.onchange();" onpaste="this.onchange();"
 					oninput="this.onchange();" id="validity-input">
 				<p class="text-white">
 					<span id='validity-statement'>We will tell you here if the address has a valid claim!</span>
@@ -142,7 +142,7 @@ layout: default
 			<div class="col-md-12 col-lg-12 pt-2 pb-4">
 				<div class="display-4 mb-2 opacity-70" data-aos="slide-up">Step 4</div>
 				<h2 class="display-4 text-white mb-3 mb-md-5">Verify Your Claim</h2>
-				<input class="dashboard-input mb-3 mb-md-5" onchange="globalThis.infoBoxChecker();" onkeyup="this.onchange();"
+				<input class="dashboard-input mb-3 mb-md-5" onchange="window.infoBoxChecker();" onkeyup="this.onchange();"
 					onpaste="this.onchange();" oninput="this.onchange();" id="address-input"
 					placeholder="Paste your Polkadot address" onfocus="this.placeholder=''"
 					onblur="this.placeholder='Paste your Polkadot address'" />

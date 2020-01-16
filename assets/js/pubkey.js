@@ -24,6 +24,6 @@ const getPubkey = () => {
     }
 }
 
-globalThis.getPubkey = getPubkey;
+window.getPubkey = getPubkey;
 
 // npx browserify pubkey.js > pubkey-browser.js; npx uglify-es --mangle --compress -- pubkey-browser.js > pubkey.min.js; rm pubkey-browser.js

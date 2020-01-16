@@ -21,11 +21,9 @@
 
 	<div>
 		<div class="row mb-5">
-
 			<div class="col-12 col-lg-6 pr-lg-5">
 				<h2 class="text-white mb-3">Install MyCrypto</h2>
 				<p>
-					<b>Notice:</b>
 					It is strongly recommended to download and use the MyCrypto application locally. For some types of key
 					storage formats this is the only option. Downloading the application locally allows you to perform the
 					signing steps offline if preferred.
@@ -125,7 +123,7 @@
 				<h2 class="text-white mb-5">Get Your Public Key</h2>
 			</div>
 			<div class="col-12">
-				<input type='text' class="dashboard-input mb-5" onchange="globalThis.getPubkey(); " onkeyup="this.onchange();"
+				<input type='text' class="dashboard-input mb-5" onchange="window.getPubkey(); " onkeyup="this.onchange();"
 					onpaste="this.onchange();" oninput="this.onchange();" id="dot-addr-inp"
 					placeholder="Enter your Polkadot Address" onfocus="this.placeholder=''"
 					onblur="this.placeholder='Enter your Polkadot Address'">
@@ -154,9 +152,7 @@
 			</div>
 			<div class="col-12 col-lg-6">
 				<p>
-					Click the "Write" button in MyCrypto and unlock your wallet using the method for your preferred key
-					storage method. After
-					unlocking your account click "Sign Transaction" and in order to send it to the network.
+							Click the "Write" button in MyCrypto. In the pop-up confirm the transaction by clicking "Sign Transaction" and send it to the network.
 				</p>
 				<p>
 					MyCrypto will display a link leading you to a popular block explorer in order to verify your transaction
