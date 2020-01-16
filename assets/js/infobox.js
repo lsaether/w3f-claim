@@ -94,7 +94,7 @@ const validAddress = async () => {
 
 const check = async () => {
   let { value } = document.getElementById('address-input');
-  if (value.length !== 42 && value.length !== 66 && value.length !== 48) {
+  if (value.length !== 42 && value.length !== 66 && value.length !== 48 && value.length !== 47) {
     console.log('Wrong length input.');
     document.getElementById('eth-address').innerHTML = 'Unknown';
     document.getElementById('pd-address').innerHTML = 'None';
@@ -110,7 +110,7 @@ const check = async () => {
     return;
   }
 
-  if (value.length === 48) {
+  if (value.length === 48 || value.length === 47) {
     try {
       value = pUtil.u8aToHex(decodeAddress(value, 0));
     } catch (err) {
