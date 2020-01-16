@@ -40,9 +40,14 @@ layout: default
 					onfocus="this.placeholder=''" onblur="this.placeholder='Paste an Ethereum address'"
 					onchange="window.validAddress();" onkeyup="this.onchange();" onpaste="this.onchange();"
 					oninput="this.onchange();" id="validity-input">
-				<p class="text-white">
-					<span id='validity-statement'>We will tell you here if the address has a valid claim!</span>
-				</p>
+
+				<div class="dashboard-output mt-2">
+					<div class="dashboard-output-group">
+						<div class="dashboard-output-name">Allocation address</div>
+						<div class="dashboard-output-value text-white"><span id="validity-statement">Unknown</span></div>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</div>
