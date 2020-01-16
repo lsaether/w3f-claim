@@ -2,14 +2,14 @@
 
 @import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "../../node_modules/tiny-slider/src/tiny-slider";
+@import "../../node_modules/aos/dist/aos";
 @import "material-icons";
-@import "theme";
-
 @import "variables";
+@import "theme";
+@import "typography";
 
 @import "default";
 
-@import "typography";
 @import "global";
 @import "navbar";
 @import "bg";

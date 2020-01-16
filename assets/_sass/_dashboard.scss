@@ -1,4 +1,5 @@
 .dashboard-input {
+	appearance: none;
 	width: 100%;
 	border: none;
 	background: transparent;
@@ -7,11 +8,16 @@
 	color: white;
 	font-size: 2rem;
 	line-height: 4rem;
+	box-shadow: none;
+	font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+		"Courier New", monospace !important;
 
 	@media (max-width: 767px) {
-		padding: 0.5rem 1rem 0.7rem 1rem;
+		padding: 1rem 2rem 1.3rem 1rem;
 		font-size: 1rem;
 		line-height: 2rem;
+		border-radius: 0.5rem;
+		background: white;
 	}
 
 	border: solid 1px white;
@@ -56,6 +62,37 @@
 		@media (max-width: 767px) {
 			transform: scale(1);
 			opacity: 1;
+			color: black;
 		}
+	}
+}
+
+.dashboard-output-group {
+	margin-bottom: 4px;
+	font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+		"Courier New", monospace !important;
+}
+
+.dashboard-output-name {
+	display: inline-block;
+	color: white;
+	@media (max-width: 767px) {
+		margin-bottom: 4px;
+	}
+
+	@extend code;
+}
+
+.dashboard-output-value {
+	display: inline-block;
+	padding: 4px;
+
+	@media (max-width: 767px) {
+		display: block;
+		padding: 0;
+		overflow-wrap: break-word;
+		word-break: break-word;
+		margin-bottom: 1rem;
+		padding-left: 4px;
 	}
 }

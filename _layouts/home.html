@@ -34,7 +34,7 @@ layout: default
 	<div class="container height-40">
 		<div class="row justify-content-center">
 			<div class="col-md-12 col-lg-12 pt-2 pb-4">
-				<div class="display-4 mb-2 opacity-70 text-white">Step 1</div>
+				<div class="display-4 mb-2 opacity-70 text-white" data-aos="slide-up">Step 1</div>
 				<h2 class="display-4 text-white mb-3 mb-md-5">Check Your Ethereum <br>Address</h2>
 				<input class="dashboard-input mb-3 mb-md-5" placeholder="Paste an Ethereum address"
 					onfocus="this.placeholder=''" onblur="this.placeholder='Paste an Ethereum address'"
@@ -55,7 +55,7 @@ layout: default
 	<span id="wallet-create"></span>
 </section>
 
-<section class="bg-dark pt-3 pt-md-3 pt-lg-0 pb-0">
+<section class="bg-dark pt-3 pt-md-3 pt-lg-0">
 	<div class="container pb-0">
 		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-1 mr-lg-2 mb-2 jsSliderGoTo jsActive active"
 			data-slider="1">Polkadot{.js}
@@ -69,27 +69,25 @@ layout: default
 			data-slider="4">Coinbase</button>
 		<button class="btn mt-lg-minus-3 mr-1 mr-lg-2 mb-2" disabled>Parity Signer</button>
 	</div>
-	<div class="pb-2">
-		<div class="slider text-white">
-			<div>
-				<div class="container">
-					{%- include slider_polkadot_js_plugin.html -%}
-				</div>
+	<div class="slider text-white">
+		<div>
+			<div class="container">
+				{%- include slider_polkadot_js_plugin.html -%}
 			</div>
-			<div>
-				<div class="container">
-					{%- include slider_subkey.html -%}
-				</div>
+		</div>
+		<div>
+			<div class="container">
+				{%- include slider_subkey.html -%}
 			</div>
-			<div>
-				<div class="container">
-					{%- include slider_polkadot_js.html -%}
-				</div>
+		</div>
+		<div>
+			<div class="container">
+				{%- include slider_polkadot_js.html -%}
 			</div>
-			<div>
-				<div class="container">
-					{%- include slider_coinbase.html -%}
-				</div>
+		</div>
+		<div>
+			<div class="container">
+				{%- include slider_coinbase.html -%}
 			</div>
 		</div>
 	</div>
@@ -99,7 +97,7 @@ layout: default
 	<div class="container">
 		<div class="row justify-content-start">
 			<div class="col-12 mb-4">
-				<div class="display-4 text-secondary mb-2">Step 3</div>
+				<div class="display-4 text-secondary mb-2" data-aos="slide-up">Step 3</div>
 				<h2 class="display-4">Claim Your Dots</h2>
 			</div>
 			<div class="col-12 col-md-6 col-lg-4">
@@ -121,17 +119,15 @@ layout: default
 	<span id="claim-process"></span>
 </section>
 
-<section class="bg-dark pt-3 pt-md-3 pt-lg-0 pb-0">
+<section class="bg-dark pt-3 pt-md-3 pt-lg-0">
 	<div class="container pb-0">
 		<a href="#claim-process"
 			class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-1 mr-lg-2 mb-2 jsSliderGoToA jsActive active">MyCrypto</a>
 	</div>
-	<div class="pb-2">
-		<div class="slider sliderA text-white">
-			<div>
-				<div class="container">
-					{%- include slider_myCrypto.html -%}
-				</div>
+	<div class="slider sliderA text-white">
+		<div>
+			<div class="container">
+				{%- include slider_myCrypto.html -%}
 			</div>
 		</div>
 	</div>
@@ -144,20 +140,46 @@ layout: default
 	<div class="container height-40">
 		<div class="row justify-content-center">
 			<div class="col-md-12 col-lg-12 pt-2 pb-4">
-				<div class="display-4 mb-2 opacity-70">Step 4</div>
+				<div class="display-4 mb-2 opacity-70" data-aos="slide-up">Step 4</div>
 				<h2 class="display-4 text-white mb-3 mb-md-5">Verify Your Claim</h2>
 				<input class="dashboard-input mb-3 mb-md-5" onchange="window.infoBoxChecker();" onkeyup="this.onchange();"
 					onpaste="this.onchange();" oninput="this.onchange();" id="address-input"
 					placeholder="Paste your Polkadot address" onfocus="this.placeholder=''"
 					onblur="this.placeholder='Paste your Polkadot address'" />
-				<p>
-					Allocation address: <span id="eth-address">Unknown</span><br>
-					Polkadot address: <span id="pd-address">None</span><br>
-					Public key: <span id="pubkey">None</span><br>
-					Index: <span id="index">None</span><br>
-					Balance: <span id="balance">0</span> DOT<br>
-					Vesting: <span id='vesting'>None</span>
-				</p>
+
+				<div class="dashboard-output mt-2">
+
+					<div class="dashboard-output-group">
+						<div class="dashboard-output-name">Allocation address</div>
+						<div class="dashboard-output-value"><span id="eth-address">Unknown</span></div>
+					</div>
+
+					<div class="dashboard-output-group">
+						<div class="dashboard-output-name">Polkadot address</div>
+						<div class="dashboard-output-value"><span id="pd-address">None</span></div>
+					</div>
+
+					<div class="dashboard-output-group">
+						<div class="dashboard-output-name">Public key</div>
+						<div class="dashboard-output-value"><span id="pubkey">None</span></div>
+					</div>
+
+					<div class="dashboard-output-group">
+						<div class="dashboard-output-name">Index</div>
+						<div class="dashboard-output-value"><span id="index">None</span></div>
+					</div>
+
+					<div class="dashboard-output-group">
+						<div class="dashboard-output-name">Vesting</div>
+						<div class="dashboard-output-value"><span id='vesting'>None</span></div>
+					</div>
+
+					<div class="dashboard-output-group">
+						<div class="dashboard-output-name">Balance</div>
+						<div class="dashboard-output-value"><span id="balance">0</span> DOT</div>
+					</div>
+
+				</div>
 			</div>
 		</div>
 	</div>
@@ -175,7 +197,7 @@ layout: default
 			<div class="col-12 col-md-4 spacer-y-1 text-center">
 				Any other questions?
 			</div>
-			<div class="col-12 text-center">
+			<div class="col-12 text-center" data-aos="fade-up" data-aos-delay="300">
 				<a href="mailto:help@web3.foundation" class="btn btn-lg btn-primary mt-3 mx-md-1 px-4" target="_blank"
 					rel="noopener noreferrer">Email Us</a>
 				<a href="https://riot.im/app/#/room/!kwIkVteRpPRjjTyvTe:web3.foundation?via=web3.foundation"

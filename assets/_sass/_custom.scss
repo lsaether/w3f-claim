@@ -197,30 +197,6 @@ code {
 		content: none;
 	}
 
-	&:after {
-		@extend .bg-primary;
-
-		content: "";
-		position: absolute;
-		transform: translate(-50%, -50%);
-		width: 76%;
-		height: 2px;
-		top: 47%;
-		left: 50%;
-		z-index: 0;
-		visibility: hidden;
-
-		@media (max-width: 767px) {
-			width: 2px;
-			height: 76%;
-			visibility: visible;
-		}
-
-		@media (min-width: 992px) {
-			visibility: visible;
-		}
-	}
-
 	.card {
 		background: white;
 		position: relative;
@@ -230,4 +206,54 @@ code {
 
 .process-overview-step {
 	min-height: 8rem;
+}
+
+.process-overview-line {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	width: 84%;
+	height: 2px;
+	top: 47%;
+	left: 50%;
+	z-index: 0;
+	visibility: hidden;
+
+	@media (max-width: 767px) {
+		width: 2px;
+		height: 76%;
+		visibility: visible;
+	}
+
+	@media (min-width: 992px) {
+		visibility: visible;
+	}
+}
+
+.process-overview-line-fade {
+	position: relative;
+	background: none;
+	width: 100%;
+	height: 100%;
+}
+
+.process-overview-line-progress {
+	position: absolute;
+	width: 0;
+	height: 100%;
+	background: $primary;
+	transition: all 6s linear;
+
+	@media (max-width: 767px) {
+		width: 2px;
+		height: 0;
+	}
+
+	.aos-animate & {
+		width: 100%;
+
+		@media (max-width: 767px) {
+			width: 2px;
+			height: 100%;
+		}
+	}
 }

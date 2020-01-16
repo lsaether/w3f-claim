@@ -125,6 +125,15 @@
 
 	img {
 		box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.5);
+		max-width: none;
+		width: 100%;
+	}
+}
+
+.slider-max {
+	@media (min-width: 992px) {
+		max-width: 360px;
+		margin: 0 auto;
 	}
 }
 
@@ -350,22 +359,24 @@
 
 #s2_1,
 #s4_0 {
-	@media (min-width: 768px) {
-		margin-top: -3rem;
-	}
-
 	img {
 		max-width: 200px;
 	}
 }
 
 #s5_1 {
-	@media (min-width: 768px) {
+	@media (min-width: 992px) {
 		margin-top: -3rem;
 	}
 
 	img {
 		max-width: 260px;
+	}
+}
+
+#sA_1 {
+	img {
+		max-width: 340px;
 	}
 }
 
