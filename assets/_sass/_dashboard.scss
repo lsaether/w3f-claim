@@ -9,6 +9,8 @@
 	font-size: 2rem;
 	line-height: 4rem;
 	box-shadow: none;
+	font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+		"Courier New", monospace !important;
 
 	@media (max-width: 767px) {
 		padding: 1rem 2rem 1.3rem 1rem;
@@ -65,30 +67,20 @@
 	}
 }
 
-.dashboard-output {
-	div {
-		span {
-		}
-	}
-}
-
 .dashboard-output-group {
 	margin-bottom: 4px;
+	font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+		"Courier New", monospace !important;
 }
 
 .dashboard-output-name {
 	display: inline-block;
 	color: white;
-	padding: 4px;
-	padding-left: 0;
-
-	&:after {
-		content: "";
-		width: 100%;
-		height: 1px;
-		display: block;
-		background: white;
+	@media (max-width: 767px) {
+		margin-bottom: 4px;
 	}
+
+	@extend code;
 }
 
 .dashboard-output-value {
@@ -101,5 +93,6 @@
 		overflow-wrap: break-word;
 		word-break: break-word;
 		margin-bottom: 1rem;
+		padding-left: 4px;
 	}
 }

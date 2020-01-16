@@ -1,6 +1,7 @@
 html {
 	text-size-adjust: 100%;
 	font-size: 16px;
+	font-family: $font-body !important;
 }
 
 body {
@@ -11,8 +12,8 @@ body {
 	line-height: 1.5;
 }
 
-*:not(.material-icons):not([class^="socicon-"]):not([class*=" socicon-"]):not(code) {
-	font-family: $font-body;
+*:not(.material-icons):not([class^="socicon-"]):not([class*=" socicon-"]):not(code):not(input) {
+	// font-family: $font-body;
 }
 
 a.back-to-top.sticky-viewport-bottom.position-fixed {
