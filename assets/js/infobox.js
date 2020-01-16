@@ -65,7 +65,7 @@ const validAddress = async () => {
   if (Number(ethData.balance) === 0) {
     document.getElementById('validity-statement').innerHTML = "There is not a claim associated with this address. Did you use the right one?"
   } else {
-    document.getElementById('validity-statement').innerHTML = "You have a claim! Please proceed with the next step! 👍";
+    document.getElementById('validity-statement').innerHTML = "You have a claim! Please proceed with the next step!";
   }
 }
 
@@ -100,7 +100,7 @@ const check = async () => {
   const results = value.length === 42
     ? await getEthereumData(value, claims, frozenToken)
     : await getPolkadotData(value, claims, frozenToken);
-  
+
   if (results.noBalance) {
     console.log("This account does not have balance. Are you sure you're using the right address?");
     return;
