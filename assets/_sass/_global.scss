@@ -16,6 +16,12 @@ body {
 	// font-family: $font-body;
 }
 
+main.page-content {
+	@media (min-width: 768px) {
+		padding-top: 90px;
+	}
+}
+
 a.back-to-top.sticky-viewport-bottom.position-fixed {
 	display: none !important;
 }

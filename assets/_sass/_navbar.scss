@@ -29,6 +29,21 @@
 			border-bottom: solid 1px $gray;
 		}
 
+		@media (min-width: 768px) {
+			position: fixed;
+			z-index: 99999;
+			width: 100%;
+			height: 90px;
+			top: 0;
+			transition: top 0.4s ease;
+		}
+
+		.navbar-hidden & {
+			@media (min-width: 768px) {
+				top: -100px;
+			}
+		}
+
 		a.nav-link {
 			font-weight: 600 !important;
 			position: relative;

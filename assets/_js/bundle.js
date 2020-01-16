@@ -17,12 +17,32 @@ AOS.init({
 import './slider.js';
 import 'jquery-smooth-scroll';
 
-$('a').smoothScroll();
+$(document).ready(function() {
+	let $body = $('body');
 
-$('.jsGoToAnchor').on('click', function() {
-	let anchor = $(this).data('anchor');
-	$.smoothScroll({
-		scrollTarget: anchor
+	adjustHeader();
+
+	$(window).scroll(function() {
+		adjustHeader();
 	});
-	return false;
+
+	function adjustHeader() {
+		if ($(window).scrollTop() > 70) {
+			if (!$body.hasClass('navbar-hidden')) {
+				$body.addClass('navbar-hidden');
+			}
+		} else {
+			$body.removeClass('navbar-hidden');
+		}
+	}
+
+	$('a').smoothScroll();
+
+	$('.jsGoToAnchor').on('click', function() {
+		let anchor = $(this).data('anchor');
+		$.smoothScroll({
+			scrollTarget: anchor
+		});
+		return false;
+	});
 });
