@@ -121,7 +121,12 @@
 					onpaste="this.onchange();" oninput="this.onchange();" id="dot-addr-inp"
 					placeholder="Enter your Polkadot Address" onfocus="this.placeholder=''"
 					onblur="this.placeholder='Enter your Polkadot Address'">
-				<code id="decoded-pubkey">Your decoded public key will appear here.</code>
+				<div class="dashboard-output mt-2">
+					<div class="dashboard-output-group">
+						<div class="dashboard-output-name">Decoded public key:</div>
+						<div class="dashboard-output-value"><span id="decoded-pubkey">unknown</span></div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
