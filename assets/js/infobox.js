@@ -38,9 +38,25 @@ const validAddress = async () => {
 
   let ethData = {
     original: value,
+    amendedTo: null,
   };
 
-  const amendedLogs = await claims.getPastEvents('Amended', {
+  const amendedToLogs = await claims.getPastEvents('Amended', {
+    fromBlock: '9200000',
+    toBlock: 'latest',
+    filter: {
+      original: [ethData.original],
+      // amendedTo: [ethData.original],
+    },
+  });
+
+  if (amendedToLogs && amendedToLogs.length && ethData.original !== '0x00b46c2526e227482e2EbB8f4C69E4674d262E75') {
+    const {original, amendedTo} = amendedToLogs[0].returnValues;
+    ethData.original = original;
+    ethData.amendedTo = amendedTo;
+  }
+
+  const amendedForLogs = await claims.getPastEvents('Amended', {
     fromBlock: '9200000',
     toBlock: 'latest',
     filter: {
@@ -49,11 +65,12 @@ const validAddress = async () => {
     },
   });
 
-  if (amendedLogs && amendedLogs.length && ethData.original !== '0x00b46c2526e227482e2EbB8f4C69E4674d262E75') {
-    const [original, amendedTo] = amendedLogs[0].returnValues;
+  if (amendedForLogs && amendedForLogs.length && ethData.original !== '0x00b46c2526e227482e2EbB8f4C69E4674d262E75') {
+    const {original, amendedTo} = amendedForLogs[0].returnValues;
     ethData.original = original;
     ethData.amendedTo = amendedTo;
   }
+  // console.log(amendedLogs)
 
   ethData.balance = await frozenToken.methods.balanceOf(ethData.original).call();
   if (ethData.amendedTo) {
@@ -61,9 +78,10 @@ const validAddress = async () => {
     ethData.balance = Number(ethData.balance) + (await frozenToken.methods.balanceOf(ethData.amendedTo).call());
   }
 
-
-  if (Number(ethData.balance) === 0) {
+  if (Number(ethData.balance) === 0 || (ethData.amendedTo && !amendedForLogs.length)) {
     document.getElementById('validity-statement').innerHTML = "There is not a claim associated with this address. Did you use the right one?"
+  } else if (amendedForLogs.length) {
+    document.getElementById('validity-statement').innerHTML = `${ethData.original} is amended to ${ethData.amendedTo}. Only the amended address can make the claim.`;
   } else {
     document.getElementById('validity-statement').innerHTML = "You have a claim! Please proceed with the next step!";
   }
@@ -116,7 +134,7 @@ const check = async () => {
 }
 
 // This takes the length 42 string.
-const getEthereumData = async (ethAddress, claims, frozenToken) => {
+const getEthereumData = async (ethAddress, claims, frozenToken, ignoreAmendment) => {
   let ethData = {
     original: ethAddress,
     amendedTo: null,
@@ -125,7 +143,33 @@ const getEthereumData = async (ethAddress, claims, frozenToken) => {
     noBalance: false,
   };
 
-  const amendedLogs = await claims.getPastEvents('Amended', {
+  const amendedToLogs = await claims.getPastEvents('Amended', {
+    fromBlock: '9200000',
+    toBlock: 'latest',
+    filter: {
+      original: [ethData.original],
+      // amendedTo: [ethData.original],
+    },
+  });
+
+  if (amendedToLogs && amendedToLogs.length && ethData.original !== '0x00b46c2526e227482e2EbB8f4C69E4674d262E75') {
+    const {original, amendedTo} = amendedToLogs[0].returnValues;
+    ethData.original = original;
+    ethData.amendedTo = amendedTo;
+  }
+
+  if (ethData.amendedTo && !ignoreAmendment) {
+    return {
+      original: 'None',
+      pdAddress: 'None',
+      pubkey: 'None',
+      index: 'None',
+      balance: '0',
+      vesting: null,
+    }
+  }
+
+  const amendedForLogs = await claims.getPastEvents('Amended', {
     fromBlock: '9200000',
     toBlock: 'latest',
     filter: {
@@ -134,19 +178,13 @@ const getEthereumData = async (ethAddress, claims, frozenToken) => {
     },
   });
 
-  if (amendedLogs && amendedLogs.length && ethData.original !== '0x00b46c2526e227482e2EbB8f4C69E4674d262E75') {
-    const { original, amendedTo } = amendedLogs[0].returnValues;
+  if (amendedForLogs && amendedForLogs.length && ethData.original !== '0x00b46c2526e227482e2EbB8f4C69E4674d262E75') {
+    const {original, amendedTo} = amendedForLogs[0].returnValues;
     ethData.original = original;
     ethData.amendedTo = amendedTo;
   }
 
   ethData.balance = await frozenToken.methods.balanceOf(ethData.original).call();
-  if (ethData.amendedTo) {
-    // Necessary to check for any balance of the amended to address too.
-    ethData.balance = Number(ethData.balance) + (await frozenToken.methods.balanceOf(ethData.amendedTo).call());
-  }
-
-  // console.log('first', ethData);
 
   if (Number(ethData.balance) === 0) {
     return { noBalance: true, };
@@ -159,11 +197,9 @@ const getEthereumData = async (ethAddress, claims, frozenToken) => {
       eth: [ethData.original],
     }
   });
-  // console.log('vested', vestedLogs);
 
   if (vestedLogs && vestedLogs.length) {
     ethData.vested = vestedLogs[0].returnValues.amount;
-    // console.log('in vested', ethData.vested);
   }
 
   const vestedIncreasedLogs = await claims.getPastEvents('VestedIncreased', {
@@ -175,20 +211,18 @@ const getEthereumData = async (ethAddress, claims, frozenToken) => {
   });
 
   if (vestedIncreasedLogs && vestedIncreasedLogs.length) {
-    // console.log('vestedIncreasedLogs', vestedIncreasedLogs);
     ethData.vested = vestedIncreasedLogs[vestedIncreasedLogs.length-1].returnValues.newTotal;
   }
 
   const claimData = await claims.methods.claims(ethData.original).call();
-  // console.log(claimData);
+  console.log(claimData);
+  console.log(ethData);
   const { index, pubKey } = claimData;
   if (pubKey == '0x0000000000000000000000000000000000000000000000000000000000000000') {
-    // console.log('in if', index, pubKey);
     ethData.index = 'None';
     ethData.pubkey = 'Not claimed';
     ethData.pdAddress = 'Not claimed';
   } else {
-    // console.log('in else', pubkey, index)
     ethData.index = index;
     ethData.pubkey = pubKey;
     ethData.pdAddress = encodeAddress(pUtil.hexToU8a(pubKey), 0);
@@ -205,7 +239,7 @@ const getEthereumData = async (ethAddress, claims, frozenToken) => {
 
 const getPolkadotData = async (pubkey, claims, frozenToken) => {
   const claimsForPubkey = await claims.methods.claimsForPubkey(pubkey, 0).call();
-  return getEthereumData(claimsForPubkey, claims, frozenToken);
+  return getEthereumData(claimsForPubkey, claims, frozenToken, true);
 }
 
 window.infoBoxChecker = check;
