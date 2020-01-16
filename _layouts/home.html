@@ -8,9 +8,9 @@ layout: default
 			<div class="col-12 col-lg-8 pt-4 pb-3">
 				<h1 class="display-4 text-white mb-3">Time to Claim Your Dots</h1>
 				<p class="lead">
-					This site includes a step-by-step guide to claim your dots as well as verify your claim and check your dot
-					balance. By completing this process, your dots holdings will be transposed onto Polkadot with the network's
-					genesis block. This site is only for holders of dot allocation indicator tokens.
+					This site includes a step-by-step guide to connect your dot allocation, as denoted on Ethereum, with a native
+					Polkadot address. You will also be able to verify that your claim was successful and check the balance of your
+					Polkadot address once the claim is complete. This site is only for holders of dot allocation indicator tokens.
 				</p>
 			</div>
 		</div>
@@ -23,7 +23,7 @@ layout: default
 		<div class="row mt-4">
 			<div class="col-12 col-md-6">
 				<p class="text-secondary text-center text-md-left px-4 px-md-0">
-					Completing the transaction that underlies the claim will cost a small amount of Ether.
+					Completing the transaction that underlies the claim will cost a small amount of ether, around $1 worth.
 				</p>
 				</iv>
 			</div>
@@ -63,11 +63,9 @@ layout: default
 <section class="bg-dark pt-3 pt-md-3 pt-lg-0">
 	<div class="container pb-0">
 		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-1 mr-lg-2 mb-2 jsSliderGoTo jsActive active"
-			data-slider="1">Polkadot{.js}
-			Browser
-			Plugin</button>
+			data-slider="1">polkadot.js browser plugin</button>
 		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-1 mr-lg-2 mb-2 jsSliderGoTo jsActive"
-			data-slider="2">Subkey</button>
+			data-slider="2">subkey</button>
 		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-1 mr-lg-2 mb-2 jsSliderGoTo jsActive"
 			data-slider="3">polkadot.js</button>
 		<button class="btn btn-primary btn-bg-dark mt-lg-minus-3 mr-1 mr-lg-2 mb-2 jsSliderGoTo jsActive"
@@ -106,18 +104,21 @@ layout: default
 				<h2 class="display-4">Claim Your Dots</h2>
 			</div>
 			<div class="col-12 col-md-6 col-lg-4">
-				<p>If you participated in a previous dot sale and received your dot allocation
-					indicator tokens, you can now claim your dots, i.e. transpose them from the Ethereum address where your dot
-					allocation indicator tokens were stored to a native Polkadot address.</p>
-				<p>Make sure to use your original Ethereum key during this
-					process.</p>
+				<p>
+					If you participated in a previous dot sale and received your dot allocation indicator tokens, you can now
+					claim your dots, i.e. connect the address where your dot indicators have been stored on Ethereum with a native
+					Polkadot address. The claims process will ensure that your dot allocation is denoted in Polkadot's genesis
+					block.
+				</p>
+				<p>
+					Make sure to use the Ethereum key you used for your dot allocation indicator tokens during this process. You
+					can check your Ethereum key in <a href="#verify-ethereum-address">Step 1</a>.
+				</p>
 			</div>
 			<div class="col-12 col-md-6 col-lg-4 mb-4">
-				<p>If you don’t have a Polkadot address, you will
-					need to generate one.</p>
-				<p>
-					<a href="#wallet">Go to Create an Address</a>
-				</p>
+				<p>If you don’t have a Polkadot address, you will need to generate one.
+					You can generate a Polkadot address in
+					<a href="#wallet">Step 2</a>.</p>
 			</div>
 		</div>
 	</div>
@@ -153,38 +154,32 @@ layout: default
 					onblur="this.placeholder='Paste your Polkadot address'" />
 
 				<div class="dashboard-output mt-2">
-
 					<div class="dashboard-output-group">
 						<div class="dashboard-output-name">Allocation address</div>
 						<div class="dashboard-output-value"><span id="eth-address">Unknown</span></div>
 					</div>
-
 					<div class="dashboard-output-group">
 						<div class="dashboard-output-name">Polkadot address</div>
 						<div class="dashboard-output-value"><span id="pd-address">None</span></div>
 					</div>
-
 					<div class="dashboard-output-group">
 						<div class="dashboard-output-name">Public key</div>
 						<div class="dashboard-output-value"><span id="pubkey">None</span></div>
 					</div>
-
 					<div class="dashboard-output-group">
 						<div class="dashboard-output-name">Index</div>
 						<div class="dashboard-output-value"><span id="index">None</span></div>
 					</div>
-
 					<div class="dashboard-output-group">
 						<div class="dashboard-output-name">Vesting</div>
 						<div class="dashboard-output-value"><span id='vesting'>None</span></div>
 					</div>
-
 					<div class="dashboard-output-group">
 						<div class="dashboard-output-name">Balance</div>
 						<div class="dashboard-output-value"><span id="balance">0</span> DOT</div>
 					</div>
-
 				</div>
+
 			</div>
 		</div>
 	</div>
