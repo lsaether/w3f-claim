@@ -26,6 +26,25 @@ w3.eth.getBlockNumber().then((Res) => {
 const frozenToken = new w3.eth.Contract(FrozenTokenArtifact.abi, FROZENTOKEN_ADDRESS);
 const claims = new w3.eth.Contract(ClaimsArtifact.abi, CLAIMS_ADDRESS);
 
+claims.methods.claimedLength().call((err, res) => {
+  if (err) {
+    console.log(err);
+    return;
+  }
+  document.getElementById('total-claims').innerHTML = res;
+})
+
+claims.methods.nextIndex().call((err, res) => {
+  if (err) {
+    console.log(err);
+    return;
+  }
+
+  const registry = new TypeRegistry();
+  const m = createType(registry, 'AccountIndex', Number(res));
+  document.getElementById('next-index').innerHTML = `${m.toString()}`;
+})
+
 document.getElementById('claims-address').innerHTML = CLAIMS_ADDRESS;
 document.getElementById('contract-abi').innerHTML = JSON.stringify(ClaimsArtifact.abi);
 
