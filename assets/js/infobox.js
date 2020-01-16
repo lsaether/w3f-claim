@@ -2,6 +2,11 @@ const { encodeAddress, decodeAddress } = require('@polkadot/keyring');
 const pUtil = require('@polkadot/util');
 const Web3 = require('web3');
 
+const { createType, TypeRegistry } = require('@polkadot/types');
+const { setSS58Format } = require('@polkadot/util-crypto');
+
+setSS58Format(0);
+
 const ClaimsArtifact = require('../contracts/Claims.json');
 const FrozenTokenArtifact = require('../contracts/FrozenToken.json');
 
@@ -223,7 +228,9 @@ const getEthereumData = async (ethAddress, claims, frozenToken, ignoreAmendment)
     ethData.pubkey = 'Not claimed';
     ethData.pdAddress = 'Not claimed';
   } else {
-    ethData.index = index;
+    const registry = new TypeRegistry();
+    const m = createType(registry, 'AccountIndex', Number(index));
+    ethData.index = `${index} (${m.toString()})`;
     ethData.pubkey = pubKey;
     ethData.pdAddress = encodeAddress(pUtil.hexToU8a(pubKey), 0);
   }
