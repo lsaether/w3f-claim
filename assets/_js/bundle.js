@@ -6,16 +6,16 @@ import $ from 'jquery';
 window.jQuery = $;
 window.$ = $;
 
+import './slider.js';
+import 'jquery-smooth-scroll';
 import AOS from 'aos';
 
 AOS.init({
 	duration: 1100,
 	once: true,
-	disable: false
+	disable: false,
+	startEvent: 'load'
 });
-
-import './slider.js';
-import 'jquery-smooth-scroll';
 
 $(document).ready(function() {
 	let $body = $('body');
@@ -35,6 +35,12 @@ $(document).ready(function() {
 			$body.removeClass('navbar-hidden');
 		}
 	}
+
+	document.addEventListener('aos:in:step-checker', ({ detail }) => {
+		setTimeout(function() {
+			$('.process-overview-line-progress').addClass('visible');
+		}, 1200);
+	});
 
 	$('a').smoothScroll();
 
