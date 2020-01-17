@@ -75,7 +75,6 @@
     "@polkadot/util-crypto": "^1.8.1",
     "aos": "^3.0.0-beta.6",
     "bootstrap-sass": "^3.4.1",
-    "imports-loader": "^0.8.0",
     "jquery-smooth-scroll": "^2.2.0",
     "tiny-slider": "^2.9.2",
     "web3": "^1.2.4"
