@@ -17,6 +17,14 @@ AOS.init({
 	startEvent: 'load'
 });
 
+document.addEventListener('aos:in:step-checker', ({ detail }) => {
+	setTimeout(function() {
+		document
+			.querySelector('.process-overview-line-progress')
+			.classList.add('visible');
+	}, 1200);
+});
+
 $(document).ready(function() {
 	let $body = $('body');
 
@@ -35,12 +43,6 @@ $(document).ready(function() {
 			$body.removeClass('navbar-hidden');
 		}
 	}
-
-	document.addEventListener('aos:in:step-checker', ({ detail }) => {
-		setTimeout(function() {
-			$('.process-overview-line-progress').addClass('visible');
-		}, 1200);
-	});
 
 	$('a').smoothScroll();
 

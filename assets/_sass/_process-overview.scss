@@ -1,0 +1,118 @@
+.process-overview-timeline {
+	position: relative;
+	justify-content: space-between !important;
+
+	& > div:nth-child(2) {
+		@media only screen and (min-width: 1200px) {
+			flex: 0 0 41.66667%;
+			max-width: 41.66667%;
+		}
+	}
+
+	&:after,
+	&:before {
+		content: none;
+	}
+
+	.card {
+		background: white;
+		position: relative;
+		z-index: 1;
+	}
+}
+
+.process-overview-step {
+	height: 8rem;
+}
+
+.process-overview-step-options {
+	height: 8rem;
+}
+
+.process-overview-line {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	width: 84%;
+	height: 1px;
+	top: 53%;
+	left: 50%;
+	z-index: 0;
+
+	@media (max-width: 767px) {
+		width: 1px;
+		height: 76%;
+	}
+
+	@media (min-width: 768px) and (max-width: 991px) {
+		display: none;
+	}
+}
+
+.process-overview-line-fade {
+	position: relative;
+	background: none;
+	width: 100%;
+	height: 100%;
+}
+
+.process-overview-line-progress {
+	position: absolute;
+	width: 0%;
+	height: 100%;
+	transition: all 2.4s linear;
+	visibility: hidden;
+
+	@media (max-width: 767px) {
+		width: 1px;
+		height: 0;
+	}
+
+	&.visible {
+		width: 100%;
+
+		@media (max-width: 767px) {
+			width: 1px;
+			height: 100%;
+		}
+	}
+}
+
+.active-animation {
+	background-image: linear-gradient(90deg, $primary 50%, transparent 50%);
+	background-repeat: repeat-x;
+	background-size: 15px 1px;
+	background-position: left top;
+	animation: border-dance 1s infinite linear;
+
+	@media (max-width: 767px) {
+		background-image: linear-gradient(0deg, $primary 50%, transparent 50%);
+		background-repeat: repeat-y;
+		background-size: 1px 15px;
+		background-position: left bottom;
+		animation: border-dance-y 1s infinite linear;
+	}
+}
+
+@keyframes border-dance {
+	0% {
+		background-position: left top;
+	}
+	100% {
+		background-position: left 15px top;
+	}
+}
+
+@keyframes border-dance-y {
+	0% {
+		background-position: left top;
+	}
+	100% {
+		background-position: left top 15px;
+	}
+}
+
+#process-overview-step-mycrypto {
+	position: absolute;
+	transform: translate(-50%, 0);
+	left: 50%;
+}
