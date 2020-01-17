@@ -14,6 +14,14 @@ for (var i = 0; i <= config.js.entry.length - 1; i++) {
 
 if (config.tasks.eslint) config.webpack.module.rules.push(config.eslintLoader);
 
+config.webpack.plugins = [
+	new webpack.ProvidePlugin({
+		$: 'jquery',
+		jQuery: 'jquery',
+		'window.jQuery': 'jquery'
+	})
+];
+
 config.webpack.watch = argv.watch;
 config.webpack.mode = argv.mode || config.webpack.mode;
 
@@ -23,21 +31,7 @@ gulp.task('webpack', function() {
 		.pipe(plumber())
 		.pipe(named())
 		.pipe(babel())
-		.pipe(
-			webpackStream(
-				{
-					mode: 'production',
-					plugins: [
-						new webpack.ProvidePlugin({
-							$: 'jquery',
-							jQuery: 'jquery',
-							'window.jQuery': 'jquery'
-						})
-					]
-				},
-				webpack
-			)
-		)
+		.pipe(webpackStream(config.webpack, webpack))
 		.pipe(gulp.dest(config.assets + '/' + config.js.dest));
 });
 
