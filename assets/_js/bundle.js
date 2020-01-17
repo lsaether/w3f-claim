@@ -3,8 +3,6 @@
 
 'use strict';
 
-import 'bootstrap-sass';
-
 import AOS from 'aos';
 
 AOS.init({
@@ -25,3 +23,4 @@ document.addEventListener('aos:in:step-checker', ({ detail }) => {
 import './scroll.js';
 import './slider.js';
 import './header.js';
+import './faq.js';
