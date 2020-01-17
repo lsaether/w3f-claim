@@ -180,3 +180,24 @@ code {
 		}
 	}
 }
+
+#faq {
+	.list-group-item {
+		border-bottom: solid 1px rgba($color: $secondary-lighter, $alpha: 0.2);
+		margin-bottom: 1px;
+	}
+}
+
+.accordion-toggle {
+	&.show {
+		i {
+			transform: rotate(90deg) translateX(0);
+		}
+	}
+
+	&:hover.show {
+		i {
+			transform: rotate(90deg) translateX(0);
+		}
+	}
+}

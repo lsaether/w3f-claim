@@ -1,9 +1,10 @@
 /* eslint-disable no-invalid-this */
 /* eslint-disable comma-dangle */
 
-$('#faq .list-group-item > div').click(function() {
+$('.accordion-toggle').click(function() {
 	$(this)
+		.toggleClass('show')
 		.next()
-		.toggleClass('show');
+		.slideToggle();
 	return false;
 });
