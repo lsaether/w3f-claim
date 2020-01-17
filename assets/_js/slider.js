@@ -4,26 +4,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-invalid-this */
 
-import $ from 'jquery';
-window.jQuery = $;
-window.$ = $;
 import { tns } from 'tiny-slider/src/tiny-slider';
-
-// let sliderInnerParitySigner = tns({
-// 	container: '#nested_inner_parity_signer',
-// 	mode: 'gallery',
-// 	items: 1,
-// 	nested: 'inner',
-// 	slideBy: 'page',
-// 	speed: 400,
-// 	controls: true,
-// 	nav: true,
-// 	navPosition: 'bottom',
-// 	controlsPosition: 'bottom',
-// 	autoplay: false,
-// 	loop: false,
-// 	lazyload: true
-// });
 
 let sliderInnerPolkadotJsPlugin = tns({
 	container: '#nested_inner_polkadot_js_plugin',
@@ -74,21 +55,17 @@ const slider = tns({
 	autoHeight: false
 });
 
-(function($) {
-	$(function() {
-		$(document).ready(function() {
-			$('.jsSliderGoTo').click(function() {
-				let sliderIndex = $(this).data('slider') - 1;
-				slider.goTo(sliderIndex);
-				let index = slider.getInfo().index;
-				$('.jsSliderGoTo.jsActive').removeClass('active');
-				$('.jsSliderGoTo.jsActive')
-					.eq(index)
-					.addClass('active');
-			});
-		});
+$(document).ready(function() {
+	$('.jsSliderGoTo').click(function() {
+		let sliderIndex = $(this).data('slider') - 1;
+		slider.goTo(sliderIndex);
+		let index = slider.getInfo().index;
+		$('.jsSliderGoTo.jsActive').removeClass('active');
+		$('.jsSliderGoTo.jsActive')
+			.eq(index)
+			.addClass('active');
 	});
-})(jQuery);
+});
 
 let sliderInnerA = tns({
 	container: '#nested_innerA',
@@ -119,18 +96,14 @@ const sliderA = tns({
 	speed: 600
 });
 
-(function($) {
-	$(function() {
-		$(document).ready(function() {
-			$('.jsSliderGoToA').click(function() {
-				let sliderIndex = $(this).data('slider') - 1;
-				slider.goTo(sliderIndex);
-				let index = slider.getInfo().index;
-				$('.jsSliderGoToA.jsActive').removeClass('active');
-				$('.jsSliderGoToA.jsActive')
-					.eq(index)
-					.addClass('active');
-			});
-		});
+$(document).ready(function() {
+	$('.jsSliderGoToA').click(function() {
+		let sliderIndex = $(this).data('slider') - 1;
+		slider.goTo(sliderIndex);
+		let index = slider.getInfo().index;
+		$('.jsSliderGoToA.jsActive').removeClass('active');
+		$('.jsSliderGoToA.jsActive')
+			.eq(index)
+			.addClass('active');
 	});
-})(jQuery);
+});

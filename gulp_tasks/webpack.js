@@ -6,7 +6,6 @@ const named = require('vinyl-named');
 const plumber = require('gulp-plumber');
 const webpackStream = require('webpack-stream');
 const webpack = require('webpack');
-var jquery = require('gulp-jquery');
 
 const entry = [];
 for (var i = 0; i <= config.js.entry.length - 1; i++) {
@@ -24,7 +23,21 @@ gulp.task('webpack', function() {
 		.pipe(plumber())
 		.pipe(named())
 		.pipe(babel())
-		.pipe(webpackStream(config.webpack, webpack))
+		.pipe(
+			webpackStream(
+				{
+					mode: 'production',
+					plugins: [
+						new webpack.ProvidePlugin({
+							$: 'jquery',
+							jQuery: 'jquery',
+							'window.jQuery': 'jquery'
+						})
+					]
+				},
+				webpack
+			)
+		)
 		.pipe(gulp.dest(config.assets + '/' + config.js.dest));
 });
 

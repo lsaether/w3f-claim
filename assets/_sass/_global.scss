@@ -12,10 +12,6 @@ body {
 	line-height: 1.5;
 }
 
-*:not(.material-icons):not([class^="socicon-"]):not([class*=" socicon-"]):not(code):not(input) {
-	// font-family: $font-body;
-}
-
 main.page-content {
 	@media (min-width: 768px) {
 		padding-top: 90px;
