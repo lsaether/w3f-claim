@@ -153,7 +153,7 @@ const check = async () => {
     document.getElementById('pubkey').innerHTML = results.pubkey;
     document.getElementById('index').innerHTML = results.index;
     document.getElementById('balance').innerHTML = results.balance;
-    document.getElementById('vesting').innerHTML = results.vested ? results.vested + ' DOT' : 'None';
+    document.getElementById('vesting').innerHTML = results.vesting ? results.vesting + ' DOT' : 'None';
   }
 }
 
@@ -163,7 +163,7 @@ const getEthereumData = async (ethAddress, claims, frozenToken, ignoreAmendment)
     original: ethAddress,
     amendedTo: null,
     balance: null,
-    vested: null,
+    vesting: null,
     noBalance: false,
   };
 
@@ -222,8 +222,10 @@ const getEthereumData = async (ethAddress, claims, frozenToken, ignoreAmendment)
     }
   });
 
+  console.log(vestedLogs)
+
   if (vestedLogs && vestedLogs.length) {
-    ethData.vested = vestedLogs[0].returnValues.amount;
+    ethData.vesting = vestedLogs[0].returnValues.amount;
   }
 
   const vestedIncreasedLogs = await claims.getPastEvents('VestedIncreased', {
@@ -235,7 +237,7 @@ const getEthereumData = async (ethAddress, claims, frozenToken, ignoreAmendment)
   });
 
   if (vestedIncreasedLogs && vestedIncreasedLogs.length) {
-    ethData.vested = vestedIncreasedLogs[vestedIncreasedLogs.length-1].returnValues.newTotal;
+    ethData.vesting = vestedIncreasedLogs[vestedIncreasedLogs.length-1].returnValues.newTotal;
   }
 
   const claimData = await claims.methods.claims(ethData.original).call();
@@ -256,8 +258,8 @@ const getEthereumData = async (ethAddress, claims, frozenToken, ignoreAmendment)
 
   // Normalize balances
   ethData.balance = Number(ethData.balance) / 1000;
-  if (ethData.vested) {
-    ethData.vested = Number(ethData.vested) / 1000;
+  if (ethData.vesting) {
+    ethData.vesting = Number(ethData.vesting) / 1000;
   }
 
   return ethData;
